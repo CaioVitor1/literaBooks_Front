@@ -22,7 +22,7 @@ export default function SignIn(){
         })
         .catch(res => {
             console.log("deu ruim")
-            alert("Você inseriu dados inválidos ou já cadastrados. A senha precisa conter 8 digitos, letras maiúsculas, minúsculas e um caractere especial")
+            alert("Você inseriu dados inválidos")
         })
     }
 
