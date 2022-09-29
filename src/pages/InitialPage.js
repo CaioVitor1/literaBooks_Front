@@ -2,10 +2,9 @@ import styled from "styled-components";
 import pascal from "../assets/images/pascal.jpeg"
 import thumb from "../assets/images/thumb.jpg";
 import Title from "../components/Title";
-import { useNavigate } from "react-router-dom";
 
 export default function InitialPage(){
-    const navigate = useNavigate();
+
     return (
         <InitialPageBody>
             <Title />

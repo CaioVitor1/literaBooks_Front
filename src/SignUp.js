@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { useNavigate } from "react-router-dom";
 import Title from "./components/Title";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import axios from "axios";
 export default function SignUp(){
     const navigate = useNavigate();
@@ -41,7 +41,7 @@ return (
             <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="senha" />
             <h3> Confirme sua senha</h3>
             <input type="text" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder="Confirme a senha" />
-           <Button>
+           <Button onClick={register}>
                 Criar conta
            </Button>
            
