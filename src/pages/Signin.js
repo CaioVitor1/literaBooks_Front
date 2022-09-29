@@ -1,5 +1,5 @@
 export default function Signin(){
     return(
-        <h2>OLá</h2>
+        <h2>Login</h2>
     )
 }
