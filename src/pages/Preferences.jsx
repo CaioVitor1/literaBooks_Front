@@ -35,7 +35,7 @@ export default function Preferences(){
 		<PreferencesBody>
 			<Header>
 				<h2> A seguir, escolha seus gêneros favoritos</h2>
-				<h3> Nós vamos seus generos favoritos para melhorar nossas recomentações para você! </h3>
+				<h3> Selecione seus gêneros favoritos para melhorar nossas recomentações para você! </h3>
 			</Header>
             <Options>
 				<Choice>

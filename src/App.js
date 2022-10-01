@@ -6,6 +6,7 @@ import InitialPage from "./pages/InitialPage";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import Preferences from "./pages/Preferences"
+import ReadingGoal from "./pages/readingGoal";
 function App() {
       /*const [user, setUser] = useState({
         token: ""  
@@ -20,6 +21,7 @@ function App() {
               <Route path="/signin" element={<SignIn />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/preferences" element={<Preferences />} />
+              <Route path="/readingoal" element={<ReadingGoal />} />
           </Routes>
        
       </BrowserRouter>
