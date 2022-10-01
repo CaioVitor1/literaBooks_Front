@@ -4,8 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import InitialPage from "./pages/InitialPage";
 import SignUp from "./pages/SignUp";
-import Signin from "./pages/Signin";
-import Preferences from "./pages/Preferences";
+import SignIn from "./pages/SignIn";
+import Preferences from "./pages/Preferences"
 function App() {
       /*const [user, setUser] = useState({
         token: ""  
@@ -17,7 +17,7 @@ function App() {
         
           <Routes>
               <Route path="/" element={<InitialPage />} />
-              <Route path="/signin" element={<Signin />} />
+              <Route path="/signin" element={<SignIn />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/preferences" element={<Preferences />} />
           </Routes>
