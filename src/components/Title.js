@@ -30,11 +30,14 @@ export default function Title(){
 const TitleBody = styled.div`
 margin: 40px 50px;
 border:solid;
+border-radius: 10px;
+border-color: #8b4513;
 padding-bottom: 30px;
 border-width: 1px 0px;
 display: flex;
 justify-content: space-between;
 align-items: center;
+background-color: white;
 @media (max-width: 600px) {
     flex-direction: column;
   }
