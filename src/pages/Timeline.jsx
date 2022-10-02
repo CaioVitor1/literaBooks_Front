@@ -1,11 +1,17 @@
-import styled from "styled-components"
-import Title from "../components/Title"
-import challange from "../assets/images/challange.jpg"
-import jobsBook from "../assets/images/jobs.jpg"
-import nextReadingPicture from "../assets/images/nextReading.jpg"
-import oneDay from "../assets/images/oneDay.jpg"
-import { useState } from "react"
-
+import Title from "../components/Title";
+import challange from "../assets/images/challange.jpg";
+import jobsBook from "../assets/images/jobs.jpg";
+import nextReadingPicture from "../assets/images/nextReading.jpg";
+import oneDay from "../assets/images/oneDay.jpg";
+import { useState } from "react";
+import {TimelineBody, 
+        RecomendationsGenre,
+        LeftBar, 
+        Goal, 
+        GoalInfos,
+        NextReading,
+        NextReadingInfo,
+        Recomendations} from "../components/timelineComponent"
 
 function RenderRecomendations({title, genre, image}){
     return(
@@ -60,8 +66,6 @@ export default function Timeline(){
                             
                         </NextReading>
                     )}
-                    
-                
             </LeftBar>
 
             <Recomendations>
@@ -72,108 +76,3 @@ export default function Timeline(){
         </>
     )
 }
-
-const TimelineBody = styled.div`
-display: flex;
-`
-
-const LeftBar = styled.div`
-padding: 10px;
-margin-left: 20px;
-`
-
-const Goal = styled.div`
-padding: 10px;
-border:solid;
-border-color: gray;
-border-width: 0px 0px 1px 0px;
-margin-bottom: 30px;
-background-color: #dcdcdc;
-border-radius: 20px;
-h3{
-font-size: 20px;
-margin:10px;
-}
-`
-
-const NextReading = styled.div`
-padding: 10px;
-border:solid;
-border-color: gray;
-background-color: #dcdcdc;
-border-radius: 20px;
-border-width: 0px 0px 1px 0px;
-img{
-width: 150px;
-height: 150px;
-margin: 20px 10px 20px 10px;
-}
-h3{
-font-size: 20px;
-margin:10px;
-}
-
-`
-const GoalInfos = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-margin: 10px;
-img {
-width: 150px;
-height: 150px;
-margin: 20px 10px 20px 10px;
-}    
-h3{
-font-size: 20px;
-}
-`
-
-const NextReadingInfo = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-h3{
-font-size: 20px;
-}
-`
-
-const Recomendations = styled.div`
-margin-top: 10px;
-border-radius: 20px;
-margin-left: 60px;
-padding: 10px;
-background-color: #dcdcdc;
-h2{
-font-size:30px;
-color: #8b4513;
-margin-bottom: 20px;
-}
-`
-
-const RecomendationsGenre = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-border: solid;
-border-color: gray;
-border-width: 1px 0px;
-border-radius: 20px;
-
-img{
-width: 250px;
-height: 350px;
-margin-bottom: 30px;
-}
-h3{
-margin: 10px 0px;
-font-size: 25px;
-color: gray;
-}
-h4{
-margin: 10px 0px;
-font-size: 25px;
-color: gray;
-}
-`
