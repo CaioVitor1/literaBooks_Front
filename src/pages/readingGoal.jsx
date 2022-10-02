@@ -31,8 +31,9 @@ export default function ReadingGoal(){
 }
 
     return(
-        <ReadingGoalBody>
+        <>
             <Title />
+            <ReadingGoalBody>
             <Header>
                 <h2> Inclua uma meta de leitura anual!</h2>
                 <h3> Aqui vai um desafio! Compartilhe com a gente sua meta de leitura e nos deixe
@@ -45,6 +46,7 @@ export default function ReadingGoal(){
             </ChallangeBooks>
             <Button onClick={sendCount}> Ir para tela inicial</Button>
         </ReadingGoalBody>
+    </>
     )
 }
 

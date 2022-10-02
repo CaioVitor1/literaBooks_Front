@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
 export const ReadingGoalBody = styled.div`
+width: 50%;
 display: flex;
-flex-direction: column;
 justify-content: center;
 align-items: center;
+margin: 0 auto;
+flex-direction: column;
+
 `
 
 export const Header = styled.div`
