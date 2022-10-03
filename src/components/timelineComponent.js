@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const TimelineBody = styled.div`
 display: flex;
 `
-export const LeftBar = styled.div`
+export const Sidebar = styled.div`
 padding: 10px;
 margin-left: 20px;
 `

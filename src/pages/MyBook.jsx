@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import Title from "../components/TitleComponent";
 import oneDay from "../assets/images/oneDay.jpg";
-
+import LeftBar from "../components/LeftBarComponent";
 function ListReviews({title, genre, author}){
     return(
         <Reviews>
@@ -36,7 +36,7 @@ export default function MyBook(){
         <>
         <Title />
         <MybookBody>
-            
+            <LeftBar />
             
             {(myReviews.length === 0) && (<h2> Você não cadastrou nenhuma resenha ainda! 🙁</h2>)}
             {(myReviews.length !== 0) && (

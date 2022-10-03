@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Title from "../components/Title";
+import Title from "../components/TitleComponent";
 import { useState } from 'react';
 import axios from "axios";
 import { SignContent, Button } from "../components/authComponent";
