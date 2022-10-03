@@ -3,14 +3,17 @@ import Title from "../components/TitleComponent";
 import oneDay from "../assets/images/oneDay.jpg";
 import LeftBar from "../components/LeftBarComponent";
 import {Reviews, Content, MybookBody} from "../components/MyBookComponent"
+import { useNavigate } from "react-router-dom";
+
 function ListReviews({title, genre, author}){
+    const navigate = useNavigate();
     return(
         <Reviews>
             <h3> Titulo</h3>
             <h4> Gênero: romance</h4> 
              <h4> Autor: Nicholas</h4> 
             <img src={oneDay} alt='' />
-            <h4 onClick={() => console.log("clique")}> Veja mais</h4>
+            <h4 onClick={() => navigate('/bookdescription')}> Veja mais</h4>
         </Reviews>
     )
 }
