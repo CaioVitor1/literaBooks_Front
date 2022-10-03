@@ -9,12 +9,12 @@ import Preferences from "./pages/Preferences"
 import ReadingGoal from "./pages/readingGoal";
 import Timeline from "./pages/Timeline";
 import MyBook from "./pages/MyBook";
+import DescriptionBook from "./pages/DescriptionBook";
 function App() {
       /*const [user, setUser] = useState({
         token: ""  
     })*/
       
-    
     return (
       <BrowserRouter>
         
@@ -26,6 +26,7 @@ function App() {
               <Route path="/readingoal" element={<ReadingGoal />} />
               <Route path="/timeline" element={<Timeline />} />
               <Route path="/mybook" element={<MyBook />} />
+              <Route path="/bookdescription" element={<DescriptionBook />} />
           </Routes>
        
       </BrowserRouter>
