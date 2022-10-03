@@ -1,5 +1,5 @@
 
-import Title from "../components/Title";
+import Title from "../components/TitleComponent";
 import { useState } from "react";
 import { PreferencesBody, Header, Options, Choice, Finalizing } from "../components/PreferencesComponents";
 

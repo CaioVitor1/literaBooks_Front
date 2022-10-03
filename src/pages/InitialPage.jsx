@@ -1,6 +1,6 @@
 import pascal from "../assets/images/pascal.jpeg"
 import thumb from "../assets/images/thumb.jpg";
-import Title from "../components/Title";
+import Title from "../components/TitleComponent";
 import { InitialPageBody, Main, Image, Footer, Options } from "../components/InitialPageComponent";
 
 export default function InitialPage(){
