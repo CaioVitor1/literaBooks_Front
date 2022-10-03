@@ -5,7 +5,7 @@ import LeftBar from "../components/LeftBarComponent";
 import {Reviews, Content, MybookBody} from "../components/MyBookComponent"
 import { useNavigate } from "react-router-dom";
 
-function ListReviews({title, genre, author}){
+function ListReviews({id, title, genre, author}){
     const navigate = useNavigate();
     return(
         <Reviews>
@@ -20,16 +20,19 @@ function ListReviews({title, genre, author}){
 
 export default function MyBook(){
     const [myReviews, setMyReviews] = useState([{
+        id: 1,
         title: "Um dia",
         genre: "Romance",
         author: "Nicholas"
         }, 
         {
+        id:2,
         title: "Um dia",
         genre: "Romance",
         author: "Nicholas"
         },
         {
+        id:3,
         title: "Um dia",
         genre: "Romance",
         author: "Nicholas"
@@ -44,7 +47,7 @@ export default function MyBook(){
             {(myReviews.length !== 0) && (
                 <Content>
                     <h3> Suas resenhas:</h3>
-                    {myReviews.map((data) => <ListReviews title={data.title} genre={data.genre} author={data.author} />)}
+                    {myReviews.map((data) => <ListReviews id={data.id} title={data.title} genre={data.genre} author={data.author} />)}
                 </Content>
             )}
             
