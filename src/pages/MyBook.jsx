@@ -40,7 +40,7 @@ export default function MyBook(){
     ]);
     return(
         <>
-        <Title />
+        
         <MybookBody>
             <LeftBar />
             {(myReviews.length === 0) && (<h2> Você não cadastrou nenhuma resenha ainda! 🙁</h2>)}
