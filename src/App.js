@@ -8,8 +8,8 @@ import SignIn from "./pages/SignIn";
 import Preferences from "./pages/Preferences"
 import ReadingGoal from "./pages/readingGoal";
 import Timeline from "./pages/Timeline";
-import MyBook from "./pages/MyBook";
 import DescriptionBook from "./pages/DescriptionBook";
+import ProfileUser from "./pages/ProfileUser";
 function App() {
       /*const [user, setUser] = useState({
         token: ""  
@@ -25,8 +25,8 @@ function App() {
               <Route path="/preferences" element={<Preferences />} />
               <Route path="/readingoal" element={<ReadingGoal />} />
               <Route path="/timeline" element={<Timeline />} />
-              <Route path="/mybook" element={<MyBook />} />
               <Route path="/bookdescription" element={<DescriptionBook />} />
+              <Route path="/profile" element={<ProfileUser />} />
           </Routes>
        
       </BrowserRouter>

@@ -15,10 +15,10 @@ export default function Title(){
             )}
             {(jwt !== "") && (
                 <OptionsHeader>
-                    <h4> Página inicial</h4>
-                    <h4> Comunidade</h4>
-                    <h4> Meus livros</h4>
-                    <h4> Meu perfil</h4>
+                    <h4 onClick={() => navigate('/timeline')}> Página inicial</h4>
+                    <h4 onClick={() => navigate('/community')}> Comunidade</h4>
+                    <h4 onClick={() => navigate('/profile')}> Meu perfil</h4>
+                    <h4 onClick={() => navigate('/futureReading')}> Leituras futuras</h4>
                 </OptionsHeader>
             )}
                

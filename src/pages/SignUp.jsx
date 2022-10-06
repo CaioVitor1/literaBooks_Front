@@ -9,6 +9,7 @@ export default function SignUp(){
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const [profileImage, setProfileImage ] = useState("")
 
     function register () {
         const body = {
@@ -37,6 +38,8 @@ return (
             <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="nome" />
             <h3> Email</h3>
             <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+            <h3> Foto de perfil</h3>
+            <input type="text" value={profileImage} onChange={(e) => setProfileImage(e.target.value)} placeholder="Foto de perfil" />
             <h3> Senha</h3>
             <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="senha" />
             <h3> Confirme sua senha</h3>
