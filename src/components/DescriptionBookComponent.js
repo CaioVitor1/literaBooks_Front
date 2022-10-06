@@ -49,7 +49,7 @@ margin: 0 auto;
 width: 35vh;
 height: 7vh;
 border-radius: 10px;
-background-color: #3cb371 	;
+background-color: #3cb371;
 display: flex;
 justify-content: center;
 align-items: center;

@@ -1,15 +1,20 @@
 import Title from "../components/TitleComponent";
-import styled from "styled-components";
 import jobs from "../assets/images/jobs.jpg";
 import { useState } from "react";
-import {Reviews, Content, MybookBody} from "../components/MyBookComponent"
 import LeftBar from "../components/LeftBarComponent";
-//import MyBook from "./MyBook";
 import oneDay from "../assets/images/oneDay.jpg";
 import { useNavigate } from "react-router-dom";
+import {NewReading, 
+        ProfileBody,
+        ProfileContent, 
+        ProfileInfos, 
+        ReviewsProfile,
+        Content,
+        MybookBody,
+        Reviews } from "../components/ProfileComponent"
 
-function ListReviews({id, title, genre, author}){
-    const navigate = useNavigate();
+function ListReviews({id, title, genre, author, navigate}){
+    
     return(
         <Reviews>
             <h3> Titulo</h3>
@@ -22,6 +27,7 @@ function ListReviews({id, title, genre, author}){
 }
 
 export default function ProfileUser(){
+    const navigate = useNavigate();
     const [myReviews, setMyReviews] = useState([{
         id: 1,
         title: "Um dia",
@@ -64,10 +70,12 @@ export default function ProfileUser(){
                     {(myReviews.length !== 0) && (
                         <Content>
                             <h3> Suas resenhas:</h3>
-                            {myReviews.map((data) => <ListReviews id={data.id} title={data.title} genre={data.genre} author={data.author} />)}
+                            {myReviews.map((data) => <ListReviews navigate={navigate} id={data.id} title={data.title} genre={data.genre} author={data.author} />)}
                         </Content>
                     )}
-                    
+                    <NewReading>
+                       <h4 onClick={() => navigate('/newreading')}>Cadastrar nova Leitura! </h4> 
+                    </NewReading>
                     
                 </MybookBody>
         </>)} 
@@ -76,43 +84,4 @@ export default function ProfileUser(){
     )
 }
 
-
-const ProfileContent = styled.div`
-display: flex;
-margin-left: 60px;
-border:solid;
-border-radius: 20px;
-background-color: #e6e6fa;
-`
-
-const ProfileBody = styled.div`
-display:flex;
-align-items: center;
-justify-content: center;
-margin: 0 auto;
-img{
-    width: 30vh;
-    height: 30vh;
-    border-radius: 100px;
-    border:solid;
-}
-`
-
-const ProfileInfos = styled.div`
-margin-left: 40px;
-display: flex;
-flex-direction: column;
-align-items: center;
-
-h2{
-font-size: 30px;
-}  
-h3{
-font-size: 20px;
-}
-`
-
-const ReviewsProfile = styled.div`
-margin-top: 30px;
-`
 
