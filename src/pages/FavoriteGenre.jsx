@@ -1,11 +1,10 @@
 
-import Title from "../components/TitleComponent";
 import { useState } from "react";
 import { PreferencesBody, Header, Options, Choice, Finalizing } from "../components/PreferencesComponents";
-
+import { useNavigate } from "react-router-dom";
 export default function Preferences(){
 	const [preferencesUser, setPreferencesUser] = useState([]);
-
+	const navigate = useNavigate()
 	function getPreferences(e){
 		let preference = e.value
 		let exist = false
@@ -28,10 +27,12 @@ export default function Preferences(){
 
 	function sendPreferences(){
 		console.log(preferencesUser)
+		navigate('/userspreferences')
+
 	}
 	return(
 	<> 
-		<Title />
+		
 		<PreferencesBody>
 			<Header>
 				<h2> A seguir, escolha seus gêneros favoritos</h2>

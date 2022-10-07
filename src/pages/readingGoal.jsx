@@ -1,5 +1,3 @@
-import styled from "styled-components";
-import Title from "../components/TitleComponent";
 import challange from "../assets/images/challange.jpg"
 import { useState } from "react";
 import { Button } from "../components/authComponent";
@@ -32,7 +30,6 @@ export default function ReadingGoal(){
 
     return(
         <>
-            <Title />
             <ReadingGoalBody>
             <Header>
                 <h2> Inclua uma meta de leitura anual!</h2>

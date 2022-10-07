@@ -5,7 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import InitialPage from "./pages/InitialPage";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
-import Preferences from "./pages/Preferences"
+import FavoriteGenre from "./pages/FavoriteGenre"
+import UsersPreferences from "./pages/UsersPreferences";
 import ReadingGoal from "./pages/readingGoal";
 import Timeline from "./pages/Timeline";
 import DescriptionBook from "./pages/DescriptionBook";
@@ -24,7 +25,8 @@ function App() {
               <Route path="/" element={<InitialPage />} />
               <Route path="/signin" element={<SignIn />} />
               <Route path="/signup" element={<SignUp />} />
-              <Route path="/preferences" element={<Preferences />} />
+              <Route path="/favoriteGenre" element={<FavoriteGenre />} />
+              <Route path="/userspreferences" element={<UsersPreferences />} />
               <Route path="/readingoal" element={<ReadingGoal />} />
               <Route path="/timeline" element={<Timeline />} />
               <Route path="/bookdescription" element={<DescriptionBook />} />
