@@ -74,7 +74,7 @@ export default function ProfileUser(){
                         </Content>
                     )}
                     <NewReading>
-                       <h4 onClick={() => navigate('/newreading')}>Cadastrar nova Leitura! </h4> 
+                       <h4 onClick={() => navigate('/newreading')}> Nova Leitura! </h4> 
                     </NewReading>
                     
                 </MybookBody>
