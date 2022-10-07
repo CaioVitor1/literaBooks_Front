@@ -51,15 +51,15 @@ export default function Preferences(){
 					<h4>Romances </h4>
 				</Choice>
 				<Choice>
-					<input value={"mangás"} onClick={(e) => getPreferences(e.target)} type="checkbox" id="name" />
+					<input value={"mangas"} onClick={(e) => getPreferences(e.target)} type="checkbox" id="name" />
 					<h4>Mangás </h4>
 				</Choice>
 				<Choice>
-					<input value={"mistério"} onClick={(e) => getPreferences(e.target)} type="checkbox" id="name" />
+					<input value={"misterio"} onClick={(e) => getPreferences(e.target)} type="checkbox" id="name" />
 					<h4>Mistério </h4>
 				</Choice>
 				<Choice>
-					<input value={"ficção"} onClick={(e) => getPreferences(e.target)} type="checkbox" id="name" />
+					<input value={"ficcao"} onClick={(e) => getPreferences(e.target)} type="checkbox" id="name" />
 					<h4> Ficção</h4>
 				</Choice>
 				<Choice>

@@ -10,6 +10,7 @@ import ReadingGoal from "./pages/readingGoal";
 import Timeline from "./pages/Timeline";
 import DescriptionBook from "./pages/DescriptionBook";
 import ProfileUser from "./pages/ProfileUser";
+import NewReading from "./pages/NewReading";
 function App() {
       /*const [user, setUser] = useState({
         token: ""  
@@ -27,6 +28,7 @@ function App() {
               <Route path="/timeline" element={<Timeline />} />
               <Route path="/bookdescription" element={<DescriptionBook />} />
               <Route path="/profile" element={<ProfileUser />} />
+              <Route path="/newreading" element={<NewReading />} />
           </Routes>
        
       </BrowserRouter>
