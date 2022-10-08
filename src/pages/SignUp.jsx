@@ -18,16 +18,16 @@ export default function SignUp(){
             password,
             confirmPassword
         }
-       
+       console.log(body)
         const promise = axios.post("http://localhost:5000/signup", body)
         promise
         .then(res => {
-            navigate('/signin');
+            navigate('/favoriteGenre');
         })
         .catch(res => {
             console.log("deu ruim")
             alert("Você inseriu dados inválidos ou já cadastrados. A senha precisa conter 8 digitos, letras maiúsculas, minúsculas e um caractere especial")
-        })
+        }) 
     }
 
 return (

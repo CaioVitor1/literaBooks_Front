@@ -20,7 +20,10 @@ function RenderRecomendations({title, genre, image}){
 }
 
 export default function Timeline(){
-    
+    const localToken = localStorage.getItem("token");
+    console.log("o token é: ")
+    console.log(localToken)
+
     const [recomendationsOptions, setRecomendationsOptions] = useState([
         {genre:"biografia" ,title: "jobs", image: jobsBook},
         {genre:"biografia" ,title: "jobs", image: jobsBook},
@@ -29,6 +32,7 @@ export default function Timeline(){
         {genre:"romance" ,title: "Um dia", image: oneDay},
         {genre:"romance" ,title: "Um dia", image: oneDay},
     ])
+
     return(
         <>
             <Title />
@@ -39,6 +43,7 @@ export default function Timeline(){
                     <h2> Leituras recomendadas para você! </h2>
                     {recomendationsOptions.map((option) => <RenderRecomendations title={option.title} genre={option.genre} image={option.image}  />)}
                 </Recomendations>
+                
             </TimelineBody>
         </>
     )

@@ -1,19 +1,20 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styled from "styled-components"
+import styled from "styled-components";
+
 export default function Title(){
-    const [jwt, setJwt] = useState("a")
+   
+    const localToken = localStorage.getItem("token");
     const navigate = useNavigate();
     return(
         <TitleBody>
             <h2>Litera<span>Books</span></h2>
-            {(jwt === "") && (
+            {(localToken === "") && (
                 <Auth>
                 <h4 onClick={() => navigate("/signin")}>  Login</h4>
                 <h4 onClick={() => navigate("/signup")}> Cadastro</h4>
             </Auth>
             )}
-            {(jwt !== "") && (
+            {(localToken !== "") && (
                 <OptionsHeader>
                     <h4 onClick={() => navigate('/timeline')}> Página inicial</h4>
                     <h4 onClick={() => navigate('/community')}> Comunidade</h4>

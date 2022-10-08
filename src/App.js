@@ -13,15 +13,19 @@ import DescriptionBook from "./pages/DescriptionBook";
 import ProfileUser from "./pages/ProfileUser";
 import NewReading from "./pages/NewReading";
 import Community from "./pages/Community";
+import { useState } from "react";
+import UserContext from "./context/UserContext";
 function App() {
-      /*const [user, setUser] = useState({
-        token: ""  
-    })*/
-      
+      const [token, setToken] = useState("")
+      const contextValue = { token, setToken}
+      const [user, setUser] = useState({
+        token: ""
+    })
     return (
       <BrowserRouter>
-        
+        <UserContext.Provider value={contextValue}>
           <Routes>
+         
               <Route path="/" element={<InitialPage />} />
               <Route path="/signin" element={<SignIn />} />
               <Route path="/signup" element={<SignUp />} />
@@ -33,8 +37,9 @@ function App() {
               <Route path="/profile" element={<ProfileUser />} />
               <Route path="/newreading" element={<NewReading />} />
               <Route path="/community" element={<Community />} />
+         
           </Routes>
-       
+        </UserContext.Provider>
       </BrowserRouter>
     );
   }

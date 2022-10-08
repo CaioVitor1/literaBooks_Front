@@ -18,7 +18,7 @@ export default function ReadingGoal(){
             const promise = axios.post("http://localhost:5000/signin", body)
         promise
         .then(res => {
-            navigate('/signin');
+            navigate('/timeline');
         })
         .catch(res => {
             console.log("deu ruim")

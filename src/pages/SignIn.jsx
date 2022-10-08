@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Title from "../components/TitleComponent";
-import { useState } from 'react';
+import { useState, useContext } from "react";
+import UserContext from "../context/UserContext"
 import axios from "axios";
 import { SignContent, Button } from "../components/authComponent";
 
@@ -8,21 +9,25 @@ export default function SignIn(){
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    
+    const { token, setToken } = useContext(UserContext);
 
     function login () {
         const body = {
             email,
             password,
         }
-       
+        console.log("lá vai o token")
+       console.log(token)
         const promise = axios.post("http://localhost:5000/signin", body)
         promise
         .then(res => {
-            navigate('/signin');
+            console.log(res.data)
+            setToken(res.data)
+            localStorage.setItem("token", res.data);
+            navigate('/timeline');
         })
         .catch(res => {
-            console.log("deu ruim")
+            console.log(res.data)
             alert("Você inseriu dados inválidos")
         })
     }

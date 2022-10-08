@@ -9,7 +9,7 @@ export default function UsersPreferences(){
         if(!favoriteAuthor || !favoriteAuthor){
             alert("Por favor, preencha todos os campos!")
         }else (
-            navigate('/timeline')
+            navigate('/readingoal')
         )
     }
 return (
@@ -24,7 +24,7 @@ return (
         <input type="text" value={favoriteAuthor} onChange={(e) => setFavoriteAuthor(e.target.value)} placeholder="Livro favorito" />
     
         <Next onClick={(sendPrerences)}>
-            <h4> Ir para tela principal! </h4>
+            <h4> Ir para próxima página! </h4>
         </Next>
     </UsersPreferencesBody>
     </Background>
