@@ -6,6 +6,12 @@ import axios from 'axios';
 export default function Preferences(){
 	const [preferencesUser, setPreferencesUser] = useState([]);
 	const navigate = useNavigate()
+	const localToken = localStorage.getItem("token");
+    const config = {
+        headers: {
+            Authorization: `Bearer ${localToken}`
+        }
+    }
 	function getPreferences(e){
 		let preference = e.value
 		let exist = false
@@ -34,7 +40,7 @@ export default function Preferences(){
 		}
 		
        console.log(body)
-        const promise = axios.post("http://localhost:5000/preferences/genres", body)
+        const promise = axios.post("http://localhost:5000/preferences/genres", body, config)
         promise
         .then(res => {
 			console.log(res.data)

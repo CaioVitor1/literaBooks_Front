@@ -1,16 +1,43 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {Background, Next, UsersPreferencesBody } from "../components/UsersPreferencesComponents"
+import axios from "axios";
+
 export default function UsersPreferences(){
     const navigate = useNavigate()
     const [favoriteBook, setFavoriteBook] = useState("");
     const [favoriteAuthor, setFavoriteAuthor] = useState("");
+    const localToken = localStorage.getItem("token");
+    const config = {
+        headers: {
+            Authorization: `Bearer ${localToken}`
+        }
+    }
     function sendPrerences() {
-        if(!favoriteAuthor || !favoriteAuthor){
+
+        let body = {
+            favoriteBook,
+            favoriteAuthor
+        }
+
+        if(!favoriteBook || !favoriteAuthor){
             alert("Por favor, preencha todos os campos!")
-        }else (
+        }else{
+        const promise = axios.post("http://localhost:5000/preferences/userspreferences", body, config)
+        promise
+        .then(res => {
+			console.log(res.data)
             navigate('/readingoal')
-        )
+        })
+        .catch(res => {
+            console.log("Something is wrong in requisiton")
+            alert(res.data)
+        }) 
+        }
+            
+
+            
+    
     }
 return (
     <Background>
@@ -20,7 +47,7 @@ return (
         <h3> Qual seu livro preferido?</h3>
         <input type="text" value={favoriteBook} onChange={(e) => setFavoriteBook(e.target.value)} placeholder="Livro favorito" />
        
-        <h3> Qual seu livro preferido?</h3>
+        <h3> Qual seu autor preferido?</h3>
         <input type="text" value={favoriteAuthor} onChange={(e) => setFavoriteAuthor(e.target.value)} placeholder="Livro favorito" />
     
         <Next onClick={(sendPrerences)}>
