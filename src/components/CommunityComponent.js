@@ -26,10 +26,15 @@ background-color: #dcdcdc;
 width: 60%;
 border-radius: 20px;
 display: flex;
-
+padding: 20px;
+@media (max-width: 600px) {
+    flex-direction: column;
+  }
 img{
-width: 30vh;
-height: 30vh;
+margin: 0 auto;
+width: 20vh;
+height: 20vh;
+
 border-radius: 100px;
 }
 `

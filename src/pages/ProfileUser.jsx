@@ -1,8 +1,6 @@
 import Title from "../components/TitleComponent";
-import jobs from "../assets/images/jobs.jpg";
 import { useState, useEffect } from "react";
 import LeftBar from "../components/LeftBarComponent";
-import oneDay from "../assets/images/oneDay.jpg";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import {NewReading, 
