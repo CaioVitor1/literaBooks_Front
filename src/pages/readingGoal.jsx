@@ -1,5 +1,5 @@
 import challange from "../assets/images/challange.jpg"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../components/authComponent";
 import { ReadingGoalBody, Header, ChallangeBooks } from "../components/readingGoalComponent";
 import axios from "axios";
@@ -14,7 +14,7 @@ export default function ReadingGoal(){
             Authorization: `Bearer ${localToken}`
         }
     };
-    
+
     function sendCount() {
         const countNumber = parseInt(count)
         const fractionalNumber = count%1
