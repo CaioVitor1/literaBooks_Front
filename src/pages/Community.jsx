@@ -1,9 +1,11 @@
 import Title from "../components/TitleComponent";
-import jobs from "../assets/images/jobs.jpg"
 import { useState, useEffect } from "react";
 import axios from "axios";
 import {CommunityBody, UserProfile, UserProfileInfos, Users} from "../components/CommunityComponent"
-function ListUser({name, favoriteBook, favoriteAuthor, image}) {
+function ListUser({id, name, favoriteBook, favoriteAuthor, image}) {
+    function seeMoreInfos(){
+        console.log(id)
+    }
 return (
 <Users>
     <UserProfile>
@@ -12,7 +14,7 @@ return (
             <h3> {name} </h3>
             <h4> Livro preferido: {favoriteBook}</h4>
             <h4> Autor preferido: {favoriteAuthor}</h4>
-            <h5> Veja as ultimas resenhas de Caio Vitor</h5>
+            <h5 onClick={seeMoreInfos}> Veja as ultimas resenhas de Caio Vitor</h5>
         </UserProfileInfos>
     </UserProfile>
 </Users>
@@ -49,7 +51,7 @@ export default function Community(){
         <CommunityBody>
             <h2> Conheça novos amigos e compartilhem experiências literárias</h2>
         </CommunityBody>
-        {usersInfos.map((user) => <ListUser image={user.image} name={user.name} genres={user.genres} favoriteBook={user.favoriteBook} favoriteAuthor={user.favoriteAuthor}  />)}
+        {usersInfos.map((user) => <ListUser id={user.id} image={user.image} name={user.name} genres={user.genres} favoriteBook={user.favoriteBook} favoriteAuthor={user.favoriteAuthor}  />)}
     
         </>
     )
