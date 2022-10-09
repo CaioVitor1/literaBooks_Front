@@ -14,14 +14,14 @@ import {NewReading,
         MybookBody,
         Reviews } from "../components/ProfileComponent"
 
-function ListReviews({id, title, genre, author, navigate}){
+function ListReviews({id, title, genre, author, navigate, image}){
     
     return(
         <Reviews>
-            <h3> Titulo</h3>
-            <h4> Gênero: romance</h4> 
-             <h4> Autor: Nicholas</h4> 
-            <img src={oneDay} alt='' />
+            <h3> {title}</h3>
+            <h4> Gênero: {genre}</h4> 
+             <h4> Autor: {author}</h4> 
+            <img src={image} alt='' />
             <h4 onClick={() => navigate('/bookdescription')}> Veja mais</h4>
         </Reviews>
     )
@@ -89,7 +89,7 @@ export default function ProfileUser(){
                     {(myReviews.length !== 0) && (
                         <Content>
                             <h3> Suas resenhas:</h3>
-                            {myReviews.map((data) => <ListReviews navigate={navigate} id={data.id} title={data.title} genre={data.genre} author={data.author} />)}
+                            {myReviews.map((data) => <ListReviews navigate={navigate} image={data.image} id={data.id} title={data.title} genre={data.genre} author={data.author} />)}
                         </Content>
                     )}
                     <NewReading>
