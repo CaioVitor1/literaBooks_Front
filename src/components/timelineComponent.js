@@ -2,6 +2,9 @@ import styled from "styled-components"
 
 export const TimelineBody = styled.div`
 display: flex;
+@media (max-width: 600px) {
+    flex-direction: column;
+  }
 `
 export const Sidebar = styled.div`
 padding: 10px;
@@ -70,6 +73,13 @@ border-radius: 20px;
 margin-left: 60px;
 padding: 10px;
 background-color: #dcdcdc;
+@media (max-width: 600px) {
+    margin-left:30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 h2{
 font-size:30px;
 color: #8b4513;
