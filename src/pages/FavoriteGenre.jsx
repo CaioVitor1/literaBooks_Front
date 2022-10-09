@@ -63,7 +63,7 @@ export default function Preferences(){
             <Options>
 				<Choice>
 					{(<input value={"biografia"} onClick={(e) => getPreferences(e.target)}  type="checkbox" id="name" />)}
-					
+				
 					<h4> Biografia</h4>
 				</Choice>
 				<Choice>

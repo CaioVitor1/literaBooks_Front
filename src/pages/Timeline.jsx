@@ -1,16 +1,24 @@
 import Title from "../components/TitleComponent";
-
 import jobsBook from "../assets/images/jobs.jpg";
-
+import { useEffect, useState } from "react";
 import oneDay from "../assets/images/oneDay.jpg";
-import { useState } from "react";
 import LeftBar from "../components/LeftBarComponent";
 import {TimelineBody, 
         RecomendationsGenre,
         Recomendations} from "../components/timelineComponent";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+function RenderRecomendations({title, genre, image, genreId}){
+    if(genreId === 1){genre = "Biografia"}
+    if(genreId === 2){genre = "Infantil"}
+    if(genreId === 3){genre = "Romances"}
+    if(genreId === 4){genre = "Mangás"}
+    if(genreId === 5){genre = "Mistério"}
+    if(genreId === 6){genre = "Ficção"}
+    if(genreId === 7){genre = "Suspense"}
+    if(genreId === 8){genre = "Ciências"}
+    if(genreId === 9){genre = "Espiritual"}
 
-
-function RenderRecomendations({title, genre, image}){
     return(
         <RecomendationsGenre>
             <h4> {title} ({genre})</h4>
@@ -20,18 +28,42 @@ function RenderRecomendations({title, genre, image}){
 }
 
 export default function Timeline(){
+
+    const [first, setFirst] = useState([]);
+    const [second, setSecond] = useState([]);
+    const [thirt, setThirt] = useState([])
+
     const localToken = localStorage.getItem("token");
+    const config = {
+        headers: {
+            Authorization: `Bearer ${localToken}`
+        }
+    };
     console.log("o token é: ")
     console.log(localToken)
+    const navigate = useNavigate()
+    
+    useEffect(() => {
+        getRecommendations();
+    }, []);
 
-    const [recomendationsOptions, setRecomendationsOptions] = useState([
-        {genre:"biografia" ,title: "jobs", image: jobsBook},
-        {genre:"biografia" ,title: "jobs", image: jobsBook},
-        {genre:"biografia" ,title: "jobs", image: jobsBook},
-        {genre:"romance" ,title: "Um dia", image: oneDay},
-        {genre:"romance" ,title: "Um dia", image: oneDay},
-        {genre:"romance" ,title: "Um dia", image: oneDay},
-    ])
+    async function getRecommendations(){
+        const promise = axios.get("http://localhost:5000/reviews/getRecommendations", config)
+        promise
+        .then(res => {
+            console.log(res.data);
+            
+            setFirst(res.data[0].first)
+            setSecond(res.data[0].second)
+            setThirt(res.data[0].thirt)
+        })
+        .catch(res => {
+            alert("an error has occurred in requistion ")
+        }) 
+
+
+    }
+
 
     return(
         <>
@@ -41,7 +73,10 @@ export default function Timeline(){
 
                 <Recomendations>
                     <h2> Leituras recomendadas para você! </h2>
-                    {recomendationsOptions.map((option) => <RenderRecomendations title={option.title} genre={option.genre} image={option.image}  />)}
+                    {first.map((option) => <RenderRecomendations genreId={option.genreId} title={option.title} genre={option.genre} image={option.image}  />)}
+                    {second.map((option) => <RenderRecomendations genreId={option.genreId} title={option.title} genre={option.genre} image={option.image}  />)}
+                    {thirt.map((option) => <RenderRecomendations genreId={option.genreId} title={option.title} genre={option.genre} image={option.image}  />)}
+                   
                 </Recomendations>
                 
             </TimelineBody>

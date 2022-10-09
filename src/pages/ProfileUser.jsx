@@ -1,9 +1,8 @@
 import Title from "../components/TitleComponent";
-import jobs from "../assets/images/jobs.jpg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import LeftBar from "../components/LeftBarComponent";
-import oneDay from "../assets/images/oneDay.jpg";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import {NewReading, 
         ProfileBody,
         ProfileContent, 
@@ -13,14 +12,14 @@ import {NewReading,
         MybookBody,
         Reviews } from "../components/ProfileComponent"
 
-function ListReviews({id, title, genre, author, navigate}){
+function ListReviews({id, title, genre, author, navigate, image}){
     
     return(
         <Reviews>
-            <h3> Titulo</h3>
-            <h4> Gênero: romance</h4> 
-             <h4> Autor: Nicholas</h4> 
-            <img src={oneDay} alt='' />
+            <h3> {title}</h3>
+            <h4> Gênero: {genre}</h4> 
+             <h4> Autor: {author}</h4> 
+            <img src={image} alt='' />
             <h4 onClick={() => navigate('/bookdescription')}> Veja mais</h4>
         </Reviews>
     )
@@ -28,49 +27,67 @@ function ListReviews({id, title, genre, author, navigate}){
 
 export default function ProfileUser(){
     const navigate = useNavigate();
-    const [myReviews, setMyReviews] = useState([{
-        id: 1,
-        title: "Um dia",
-        genre: "Romance",
-        author: "Nicholas"
-        }, 
-        {
-        id:2,
-        title: "Um dia",
-        genre: "Romance",
-        author: "Nicholas"
-        },
-        {
-        id:3,
-        title: "Um dia",
-        genre: "Romance",
-        author: "Nicholas"
+    const localToken = localStorage.getItem("token");
+    const config = {
+        headers: {
+            Authorization: `Bearer ${localToken}`
         }
-    ]);
+    };
+    const [myReviews, setMyReviews] = useState([]);
+    const [infoUser, setInfoUser] = useState([]);
+    useEffect(() => {
+        getReviewsUser();
+    }, []);
+    useEffect(() => {
+        getInfoUser();
+    }, []);
+
+    async function getReviewsUser(){
+        const promise = axios.get("http://localhost:5000/reviews/user", config)
+        promise
+        .then(res => {
+            console.log(res.data);
+            setMyReviews(res.data)
+        })
+        .catch(res => {
+            alert("an error has occurred in requistion ")
+        }) 
+    }
+    async function getInfoUser(){
+        const promise = axios.get("http://localhost:5000/infos/users", config)
+        promise
+        .then(res => {
+            console.log(res.data);
+            setInfoUser(res.data)
+        })
+        .catch(res => {
+            alert("an error has occurred in requistion ")
+        }) 
+    }
+    console.log(infoUser)
     return(
         <>
             <Title />
             <ProfileContent>
                 <ProfileBody>
-                    <img src={jobs} alt='' />
+                    <img src={infoUser.image} alt='' />
                     <ProfileInfos>
-                        <h2>Caio Vitor</h2>
-                        <h3> Gêneros preferidos: xxxxx</h3>
-                        <h3> Meta de leitura: xxxx</h3>
+                        <h2> {infoUser.name}</h2>
+                        <h3> Livro favorito: {infoUser.favoriteBook}</h3>
+                        <h3> Autor preferido: {infoUser.favoriteAuthor}</h3>
                     </ProfileInfos>
                 </ProfileBody>
                 
             </ProfileContent>
             <ReviewsProfile>
-                {(myReviews.length === 0) && (<h3> O usuário ainda não escreveu nenhuma resenha</h3> )} 
-                {(myReviews.length !== 0) && (<>
+              
                 <MybookBody>
                     <LeftBar />
                     {(myReviews.length === 0) && (<h2> Você não cadastrou nenhuma resenha ainda! 🙁</h2>)}
                     {(myReviews.length !== 0) && (
                         <Content>
                             <h3> Suas resenhas:</h3>
-                            {myReviews.map((data) => <ListReviews navigate={navigate} id={data.id} title={data.title} genre={data.genre} author={data.author} />)}
+                            {myReviews.map((data) => <ListReviews navigate={navigate} image={data.image} id={data.id} title={data.title} genre={data.genre} author={data.author} />)}
                         </Content>
                     )}
                     <NewReading>
@@ -78,7 +95,7 @@ export default function ProfileUser(){
                     </NewReading>
                     
                 </MybookBody>
-        </>)} 
+ 
             </ReviewsProfile>
         </>
     )

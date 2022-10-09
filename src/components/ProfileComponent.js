@@ -40,7 +40,7 @@ margin-top: 30px;
 `
 
 export const NewReading = styled.div`
-margin: 60px 20px;
+margin: 30px 20px;
 background-color: #3cb371;
 width: 35vh;
 height: 7vh;
@@ -65,10 +65,11 @@ export const MybookBody = styled.div`
     flex-direction: column;
   }
 h2{
-    margin-top: 200px;
+    margin: 40px 0px;
     font-style: normal;
-    font-size: 30px;
-    color: gray
+    font-size: 25px;
+    color: gray;
+   
 }
 >h3{
     margin-top: 50px;
