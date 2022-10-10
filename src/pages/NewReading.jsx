@@ -19,16 +19,16 @@ export default function NewReading(){
     };
 
     function sendReview(){
-    let genreId = 0;
+    let genreId = 1;
     
     if(genre === "biografia") {genreId = 1}
     if(genre === "infantil") {genreId = 2}
-    if(genre === "romances")  {genreId = 3 }
+    if(genre === "romance")  {genreId = 3}
     if(genre === "mangas"){genreId = 4} 
     if (genre === "misterio"){genreId = 5} 
     if(genre === "ficcao") {genreId = 6} 
     if(genre === "suspense") {genreId = 7} 
-    if (genre === "ciências"){genreId = 8}
+    if (genre === "ciencias"){genreId = 8}
     if(genre === "espiritual") {genreId = 9} 
         const body = {
             title,
@@ -41,7 +41,7 @@ export default function NewReading(){
         promise
         .then(res => {
             console.log(res.data);
-           // navigate('/profile')
+            navigate('/profile')
         })
         .catch(res => {
             alert("an error has occurred in requistion ")

@@ -48,9 +48,10 @@ export default function DescriptionBook(){
             <DescriptionBookBody>
                 <DescriptionImage>
                     <img src={infos.image} alt='' />
-                    <WantRead onClick={addBook}>
+                    {/* <WantRead onClick={addBook}>
                         <h4> Desejo ler</h4>
-                    </WantRead>
+                    </WantRead>*/}
+                    
                 </DescriptionImage>
                 
                 <DescriptionContent>

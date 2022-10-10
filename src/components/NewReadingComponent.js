@@ -20,6 +20,9 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 margin-bottom: 30px;
+width: 60%;
+
+margin: 0 auto;
 input {
 width: 326px;
 height: 58px;
@@ -33,6 +36,9 @@ line-height: 23px;
 color: black;
 margin-left: 18px;
 margin-bottom: 13px;
+@media (max-width: 730px) {
+    width: 80%;
+  }
 }
 h3{
 font-size: 20px;
@@ -45,13 +51,15 @@ margin: 0px 0px 20px 18px;
 width: 60vh;
 height: 60vh;
 font-size: 17px;
+@media (max-width: 730px) {
+    width: 90%;
+  }
 }
 select{
 margin: 10px 0px 18px 10px;
 
 }
 `
-
 export const RegisterBook = styled.div`
 margin: 0 auto;
 width: 35vh;
@@ -63,6 +71,8 @@ justify-content: center;
 align-items: center;
 @media (max-width: 600px) {
     margin-top: 30px;
+    width: 25vh;
+    height: 5vh;
   }
 h4{
 font-size: 20px;

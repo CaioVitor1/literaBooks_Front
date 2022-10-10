@@ -11,8 +11,7 @@ export default function Title(){
         navigate('/')
     }
 
-    console.log("o local token é: ")
-        console.log(localToken)
+    
     return(
         <TitleBody>
             <h2>Litera<span>Books</span></h2>
@@ -70,6 +69,9 @@ justify-content: space-around;
 align-items: center;
 width: 500px;
 padding-top: 30px;
+@media (max-width: 600px) {
+    flex-direction: column;
+  }
 h4{
     font-family: 'Lato', sans-serif;
     font-style: normal;
@@ -93,7 +95,7 @@ font-style: normal;
 font-size: 20px;
 color: #8b4513;
 margin-right: 80px;
-@media (max-width: 600px) {
+@media (max-width: 828px) {
     margin-right: 10px;
   }    
    

@@ -56,6 +56,7 @@ justify-content: center;
 align-items: center;
 @media (max-width: 600px) {
     margin-top: 30px;
+    margin-left: 30px;
   }
 h4{
 font-size: 20px;
