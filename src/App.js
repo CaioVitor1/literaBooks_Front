@@ -35,7 +35,7 @@ function App() {
               <Route path="/userspreferences" element={<UsersPreferences />} />
               <Route path="/readingoal" element={<ReadingGoal />} />
               <Route path="/timeline" element={<Timeline />} />
-              <Route path="/bookdescription" element={<DescriptionBook />} />
+              <Route path="/bookdescription/:bookId" element={<DescriptionBook />} />
               <Route path="/profile" element={<ProfileUser />} />
               <Route path="/newreading" element={<NewReading />} />
               <Route path="/community" element={<Community />} />

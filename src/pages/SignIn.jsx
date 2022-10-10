@@ -10,7 +10,8 @@ export default function SignIn(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const { token, setToken } = useContext(UserContext);
-
+    const localToken = localStorage.getItem("token");
+    console.log(localToken)
     function login () {
         const body = {
             email,

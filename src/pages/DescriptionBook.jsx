@@ -6,19 +6,48 @@ import {Book,
         WantRead,
         DescriptionImage} from "../components/DescriptionBookComponent";
 import oneDay from "../assets/images/oneDay.jpg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom"; 
+import axios from "axios";
+
 export default function DescriptionBook(){
     const [book, setBook] = useState([oneDay]);
+    const [infos, setInfos] = useState([]);
+    const { bookId } = useParams();
+    const localToken = localStorage.getItem("token");
+    const config = {
+        headers: {
+            Authorization: `Bearer ${localToken}`
+        }
+    };
 
     function addBook(){
         console.log("add")
     }
+    useEffect(() => {
+        getDescription();
+    }, []);
+
+    async function getDescription(){
+        const promise = axios.get(`http://localhost:5000/reviews/${bookId}`, config)
+        promise
+        .then(res => {
+            console.log("lá vai as infos: ")
+            console.log(res.data);
+            setInfos(res.data)
+        })
+        .catch(res => {
+            alert("an error has occurred in requistion ")
+        }) 
+    }
+
+
     return(
         <>
             <Title />
             <DescriptionBookBody>
                 <DescriptionImage>
-                    <img src={book} alt='' />
+                    <img src={infos.image} alt='' />
                     <WantRead onClick={addBook}>
                         <h4> Desejo ler</h4>
                     </WantRead>
@@ -26,19 +55,9 @@ export default function DescriptionBook(){
                 
                 <DescriptionContent>
                     <Book>
-                        <h3> Um dia</h3>
-                        <h3> David Nichols</h3>
-                        <h4> Dexter Mayhew e Emma Morley se conheceram em 1988. Ambos sabem que no dia seguinte,
-                            após a formatura na universidade, deverão trilhar caminhos diferentes. Mas, depois de 
-                            apenas um dia juntos, não conseguem parar de pensar um no outro.
-                            Os anos se passam e Dex e Em levam vidas isoladas - vidas muito diferentes daquelas que eles
-                            sonhavam ter. Porém, incapazes de esquecer o sentimento muito especial que os arrebatou 
-                            naquela primeira noite, surge uma extraordinária relação entre os dois.
-                            Ao longo dos vinte anos seguintes, flashes do relacionamento deles são narrados, um por ano,
-                            todos no mesmo dia: 15 de julho. Dexter e Emma enfrentam disputas e brigas, esperanças e
-                            oportunidades perdidas, risos e lágrimas. E, conforme o verdadeiro significado desse dia
-                            crucial é desvendado, eles precisam acertar contas com a essência do amor e da própria
-                            vida.</h4>
+                        <h3> {infos.title}</h3>
+                        <h3> {infos.author}</h3>
+                        <h4> {infos.description}</h4>
                     </Book>
                     <Genres>
                         <h4> Outros gêneros: </h4>
