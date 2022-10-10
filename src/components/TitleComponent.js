@@ -6,7 +6,10 @@ export default function Title(){
     const localToken = localStorage.getItem("token");
     const navigate = useNavigate();
 
-    
+    function logout(){
+        localStorage.removeItem("token")
+        navigate('/')
+    }
 
     console.log("o local token é: ")
         console.log(localToken)
@@ -24,7 +27,7 @@ export default function Title(){
                     <h4 onClick={() => navigate('/timeline')}> Página inicial</h4>
                     <h4 onClick={() => navigate('/community')}> Comunidade</h4>
                     <h4 onClick={() => navigate('/profile')}> Meu perfil</h4>
-                    <h4> Sair</h4>
+                    <h4 onClick={logout}> Sair</h4>
                 </OptionsHeader>
             )}
                
