@@ -37,6 +37,11 @@ font-size: 20px;
 
 export const ReviewsProfile = styled.div`
 margin-top: 30px;
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 `
 
 export const NewReading = styled.div`
