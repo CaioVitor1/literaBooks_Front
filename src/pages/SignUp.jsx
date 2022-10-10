@@ -20,6 +20,7 @@ export default function SignUp(){
             image
         }
        console.log(body)
+       
         const promise = axios.post("http://localhost:5000/signup", body)
         promise
         .then(res => {
@@ -32,6 +33,7 @@ export default function SignUp(){
             console.log("deu ruim")
             alert("Você inseriu dados inválidos ou já cadastrados. A senha precisa conter 8 digitos, letras maiúsculas, minúsculas e um caractere especial")
         }) 
+        
     }
 
 return (
