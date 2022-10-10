@@ -47,12 +47,12 @@ return (
             <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
            
             <h3> Foto de perfil</h3>
-            <input type="text" value={image} onChange={(e) => setImage(e.target.value)} placeholder="Foto de perfil" />
+            <input type="text" value={image} onChange={(e) => setImage(e.target.value)} placeholder="Foto" />
             
             <h3> Senha</h3>
             <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="senha" />
            
-           <Button onClick={register}>
+           <Button data-cy="submit" onClick={register}>
                 Criar conta
            </Button>
            
