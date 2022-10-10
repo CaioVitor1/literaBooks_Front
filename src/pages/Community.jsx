@@ -1,10 +1,13 @@
 import Title from "../components/TitleComponent";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import {CommunityBody, UserProfile, UserProfileInfos, Users} from "../components/CommunityComponent"
-function ListUser({id, name, favoriteBook, favoriteAuthor, image}) {
+
+function ListUser({id, name, favoriteBook, favoriteAuthor, image, navigate}) {
     function seeMoreInfos(){
         console.log(id)
+        navigate(`/user/${id}`)
     }
 return (
 <Users>
@@ -22,6 +25,7 @@ return (
 }
 
 export default function Community(){
+    const navigate = useNavigate();
     const [usersInfos, setUsersInfos] = useState([])
     useEffect(() => {
         getUsers();
@@ -51,7 +55,7 @@ export default function Community(){
         <CommunityBody>
             <h2> Conheça novos amigos e compartilhem experiências literárias</h2>
         </CommunityBody>
-        {usersInfos.map((user) => <ListUser id={user.id} image={user.image} name={user.name} genres={user.genres} favoriteBook={user.favoriteBook} favoriteAuthor={user.favoriteAuthor}  />)}
+        {usersInfos.map((user) => <ListUser navigate={navigate} id={user.id} image={user.image} name={user.name} genres={user.genres} favoriteBook={user.favoriteBook} favoriteAuthor={user.favoriteAuthor}  />)}
     
         </>
     )
