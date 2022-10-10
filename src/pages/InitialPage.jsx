@@ -1,7 +1,7 @@
 import pascal from "../assets/images/pascal.jpeg"
 import thumb from "../assets/images/thumb.jpg";
 import Title from "../components/TitleComponent";
-import { InitialPageBody, Main, Image, Footer, Options } from "../components/InitialPageComponent";
+import { InitialPageBody, Main, Image, Footer, Options, Citations } from "../components/InitialPageComponent";
 
 export default function InitialPage(){
 
@@ -23,11 +23,16 @@ export default function InitialPage(){
             </Image>
             <Footer>
                 <img src={pascal} alt='' />
-                <h3> “Os melhores livros são aqueles que os leitores gostariam de ter escrito”</h3>
+                <Citations>
+                    <h3> “Os melhores livros são aqueles que os leitores gostariam de ter escrito”</h3>
+                    <h4> Blaise Pascal </h4>
+                </Citations>
+                
             </Footer>
             </InitialPageBody>
     )
 }
+
 
 
 
