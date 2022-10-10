@@ -26,7 +26,7 @@ import {NewReading,
     }
 
 export default function OtherUsers(){
-    console.log("o userId é: ")
+  
     const { idUser } = useParams();
     const [myReviews, setMyReviews] = useState([]);
     const [infoUser, setInfoUser] = useState([]);
@@ -45,10 +45,10 @@ export default function OtherUsers(){
     }, []);
 
     async function getReviewsUser(){
-        const promise = axios.get(`http://localhost:5000/reviews/user/${idUser}`, config)
+        const promise = axios.get(`https://literabooks.herokuapp.com/reviews/user/${idUser}`, config)
         promise
         .then(res => {
-            console.log(res.data);
+            
             setMyReviews(res.data)
         })
         .catch(res => {
@@ -56,18 +56,17 @@ export default function OtherUsers(){
         }) 
     }
     async function getInfoUser(){
-        const promise = axios.get(`http://localhost:5000/infos/users/${idUser}`, config)
+        const promise = axios.get(`https://literabooks.herokuapp.com/infos/users/${idUser}`, config)
         promise
         .then(res => {
-            console.log(res.data);
+           
             setInfoUser(res.data)
         })
         .catch(res => {
             alert("an error has occurred in requistion ")
         }) 
     }
-    console.log(myReviews)
-    console.log(infoUser)
+   
     
     return(
         <>

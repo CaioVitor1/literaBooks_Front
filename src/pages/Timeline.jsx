@@ -38,8 +38,8 @@ export default function Timeline(){
             Authorization: `Bearer ${localToken}`
         }
     };
-    console.log("o token é: ")
-    console.log(localToken)
+   
+   
     const navigate = useNavigate()
     
     useEffect(() => {
@@ -47,10 +47,10 @@ export default function Timeline(){
     }, []);
 
     async function getRecommendations(){
-        const promise = axios.get("http://localhost:5000/reviews/getRecommendations", config)
+        const promise = axios.get("https://literabooks.herokuapp.com/reviews/getRecommendations", config)
         promise
         .then(res => {
-            console.log(res.data);
+            
             
             setFirst(res.data[0].first)
             setSecond(res.data[0].second)

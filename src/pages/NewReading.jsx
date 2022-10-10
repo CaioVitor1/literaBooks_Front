@@ -37,10 +37,10 @@ export default function NewReading(){
             image,
             genreId
         }
-        const promise = axios.post("http://localhost:5000/reviews/register", body, config)
+        const promise = axios.post("https://literabooks.herokuapp.com/reviews/register", body, config)
         promise
         .then(res => {
-            console.log(res.data);
+           
             navigate('/profile')
         })
         .catch(res => {

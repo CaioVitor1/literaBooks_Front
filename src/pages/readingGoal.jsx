@@ -18,7 +18,7 @@ export default function ReadingGoal(){
     function sendCount() {
         const countNumber = parseInt(count)
         const fractionalNumber = count%1
-        console.log(countNumber)
+       
         if(isNaN(countNumber) || countNumber <= 0 || fractionalNumber !== 0){
             alert("Por favor, preencha sua meta de leitura com números inteiros e positivos!")
         } else{
@@ -26,14 +26,14 @@ export default function ReadingGoal(){
             readingGoals: countNumber
          }   
             
-        const promise = axios.post("http://localhost:5000/preferences/readingGoals", body, config)
+        const promise = axios.post("https://literabooks.herokuapp.com/preferences/readingGoals", body, config)
         promise
         .then(res => {
-            console.log(res.data)
+           
             navigate('/timeline');
         })
         .catch(res => {
-            console.log("deu ruim")
+           
             alert("Você inseriu dados inválidos")
         }) 
          

@@ -11,24 +11,24 @@ export default function SignIn(){
     const [password, setPassword] = useState("");
     const { token, setToken } = useContext(UserContext);
     const localToken = localStorage.getItem("token");
-    console.log(localToken)
+  
     function login () {
         const body = {
             email,
             password,
         }
-        console.log("lá vai o token")
-       console.log(token)
-        const promise = axios.post("http://localhost:5000/signin", body)
+        
+       
+        const promise = axios.post("https://literabooks.herokuapp.com/signin", body)
         promise
         .then(res => {
-            console.log(res.data)
+           
             setToken(res.data)
             localStorage.setItem("token", res.data);
             navigate('/timeline');
         })
         .catch(res => {
-            console.log(res.data)
+           
             alert("Você inseriu dados inválidos")
         })
     }

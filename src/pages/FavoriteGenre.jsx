@@ -18,7 +18,7 @@ export default function Preferences(){
 		for(let i = 0; i < preferencesUser.length; i++){
 			let valuePreferences = preferencesUser[i]
 			if(valuePreferences === e.value) {
-				console.log("Caiu aqui")
+				
 				exist = true
 			}
 		}
@@ -28,7 +28,7 @@ export default function Preferences(){
 		} else{
 			setPreferencesUser([...preferencesUser, e.value])
 		}
-		console.log(preferencesUser)
+		
 		
 	}
 
@@ -39,11 +39,11 @@ export default function Preferences(){
 			genre3:preferencesUser[2]
 		}
 		
-       console.log(body)
-        const promise = axios.post("http://localhost:5000/preferences/genres", body, config)
+       
+        const promise = axios.post("https://literabooks.herokuapp.com/preferences/genres", body, config)
         promise
         .then(res => {
-			console.log(res.data)
+			
             navigate('/userspreferences');
         })
         .catch(res => {

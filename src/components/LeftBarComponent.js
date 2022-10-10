@@ -21,10 +21,10 @@ export default function LeftBar(){
     }, []);
 
     async function getUsersInfo(){
-        const promise = axios.get("http://localhost:5000/infos/users", config)
+        const promise = axios.get("https://literabooks.herokuapp.com/infos/users", config)
         promise
         .then(res => {
-            console.log(res.data);
+           
             setCountBooks(res.data.readingGoals);
             setNext(res.data.nextReading);
         })

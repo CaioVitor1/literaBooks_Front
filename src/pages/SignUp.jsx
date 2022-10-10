@@ -19,18 +19,18 @@ export default function SignUp(){
             password,
             image
         }
-       console.log(body)
        
-        const promise = axios.post("http://localhost:5000/signup", body)
+       
+        const promise = axios.post("https://literabooks.herokuapp.com/signup", body)
         promise
         .then(res => {
-            console.log(res.data)
+           
             setToken(res.data)
             localStorage.setItem("token", res.data);
             navigate('/favoriteGenre');
         })
         .catch(res => {
-            console.log("deu ruim")
+            
             alert("Você inseriu dados inválidos ou já cadastrados. A senha precisa conter 8 digitos, letras maiúsculas, minúsculas e um caractere especial")
         }) 
         

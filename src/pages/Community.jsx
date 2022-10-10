@@ -6,7 +6,7 @@ import {CommunityBody, UserProfile, UserProfileInfos, Users} from "../components
 
 function ListUser({id, name, favoriteBook, favoriteAuthor, image, navigate}) {
     function seeMoreInfos(){
-        console.log(id)
+      
         navigate(`/user/${id}`)
     }
 return (
@@ -37,10 +37,10 @@ export default function Community(){
         }
     };
     async function getUsers(){
-        const promise = axios.get("http://localhost:5000/infos/everyUsers", config)
+        const promise = axios.get("https://literabooks.herokuapp.com/infos/everyUsers", config)
         promise
         .then(res => {
-            console.log(res.data);
+        
             setUsersInfos(res.data)
         })
         .catch(res => {

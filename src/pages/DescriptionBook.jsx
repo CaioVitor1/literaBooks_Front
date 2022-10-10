@@ -29,11 +29,10 @@ export default function DescriptionBook(){
     }, []);
 
     async function getDescription(){
-        const promise = axios.get(`http://localhost:5000/reviews/${bookId}`, config)
+        const promise = axios.get(`https://literabooks.herokuapp.com/reviews/${bookId}`, config)
         promise
         .then(res => {
-            console.log("lá vai as infos: ")
-            console.log(res.data);
+            
             setInfos(res.data)
         })
         .catch(res => {
