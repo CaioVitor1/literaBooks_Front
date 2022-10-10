@@ -17,7 +17,7 @@ return (
             <h3> {name} </h3>
             <h4> Livro preferido: {favoriteBook}</h4>
             <h4> Autor preferido: {favoriteAuthor}</h4>
-            <h5 onClick={seeMoreInfos}> Veja as ultimas resenhas de Caio Vitor</h5>
+            <h5 onClick={seeMoreInfos}> Veja as ultimas resenhas de {name}</h5>
         </UserProfileInfos>
     </UserProfile>
 </Users>

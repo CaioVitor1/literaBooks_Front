@@ -1,25 +1,33 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useEffect } from "react-router-dom";
 import styled from "styled-components";
 
 export default function Title(){
    
     const localToken = localStorage.getItem("token");
     const navigate = useNavigate();
+
+    function logout(){
+        localStorage.removeItem("token")
+        navigate('/')
+    }
+
+    console.log("o local token é: ")
+        console.log(localToken)
     return(
         <TitleBody>
             <h2>Litera<span>Books</span></h2>
-            {(localToken === "") && (
+            {(localToken === null) && (
                 <Auth>
                 <h4 onClick={() => navigate("/signin")}>  Login</h4>
                 <h4 onClick={() => navigate("/signup")}> Cadastro</h4>
             </Auth>
             )}
-            {(localToken !== "") && (
+            {(localToken !== null) && (
                 <OptionsHeader>
                     <h4 onClick={() => navigate('/timeline')}> Página inicial</h4>
                     <h4 onClick={() => navigate('/community')}> Comunidade</h4>
                     <h4 onClick={() => navigate('/profile')}> Meu perfil</h4>
-                    <h4 onClick={() => navigate('/futureReading')}> Leituras futuras</h4>
+                    <h4 onClick={logout}> Sair</h4>
                 </OptionsHeader>
             )}
                

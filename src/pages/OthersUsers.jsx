@@ -1,4 +1,4 @@
-import styled from "styled-components";
+
 import Title from "../components/TitleComponent";
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -13,14 +13,14 @@ import {NewReading,
     Reviews } from "../components/ProfileComponent";
 
     function ListReviews({id, title, genre, author, navigate, image}){
-    
+        const bookId = id
         return(
             <Reviews>
                 <h3> {title}</h3>
                 <h4> Gênero: {genre}</h4> 
                  <h4> Autor: {author}</h4> 
                 <img src={image} alt='' />
-                <h4 onClick={() => navigate('/bookdescription')}> Veja mais</h4>
+                <h4 onClick={() => navigate(`/bookdescription/${bookId}`)}> Veja mais</h4>
             </Reviews>
         )
     }

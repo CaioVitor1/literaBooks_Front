@@ -1,14 +1,13 @@
 import Title from "../components/TitleComponent";
-import jobsBook from "../assets/images/jobs.jpg";
 import { useEffect, useState } from "react";
-import oneDay from "../assets/images/oneDay.jpg";
 import LeftBar from "../components/LeftBarComponent";
 import {TimelineBody, 
         RecomendationsGenre,
         Recomendations} from "../components/timelineComponent";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-function RenderRecomendations({title, genre, image, genreId}){
+function RenderRecomendations({id, title, genre, image, genreId, navigate}){
+    const bookId = id
     if(genreId === 1){genre = "Biografia"}
     if(genreId === 2){genre = "Infantil"}
     if(genreId === 3){genre = "Romances"}
@@ -20,7 +19,7 @@ function RenderRecomendations({title, genre, image, genreId}){
     if(genreId === 9){genre = "Espiritual"}
 
     return(
-        <RecomendationsGenre>
+        <RecomendationsGenre onClick={() => navigate(`/bookdescription/${bookId}`)}>
             <h4> {title} ({genre})</h4>
             <img src={image} alt=''/>
         </RecomendationsGenre>
@@ -73,9 +72,9 @@ export default function Timeline(){
 
                 <Recomendations>
                     <h2> Leituras recomendadas para você! </h2>
-                    {first.map((option) => <RenderRecomendations genreId={option.genreId} title={option.title} genre={option.genre} image={option.image}  />)}
-                    {second.map((option) => <RenderRecomendations genreId={option.genreId} title={option.title} genre={option.genre} image={option.image}  />)}
-                    {thirt.map((option) => <RenderRecomendations genreId={option.genreId} title={option.title} genre={option.genre} image={option.image}  />)}
+                    {first.map((option) => <RenderRecomendations navigate={navigate} id={option.id} genreId={option.genreId} title={option.title} genre={option.genre} image={option.image}  />)}
+                    {second.map((option) => <RenderRecomendations navigate={navigate} id={option.id} genreId={option.genreId} title={option.title} genre={option.genre} image={option.image}  />)}
+                    {thirt.map((option) => <RenderRecomendations navigate={navigate} id={option.id} genreId={option.genreId} title={option.title} genre={option.genre} image={option.image}  />)}
                    
                 </Recomendations>
                 
