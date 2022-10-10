@@ -95,7 +95,7 @@ font-style: normal;
 font-size: 20px;
 color: #8b4513;
 margin-right: 80px;
-@media (max-width: 600px) {
+@media (max-width: 828px) {
     margin-right: 10px;
   }    
    

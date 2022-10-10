@@ -32,6 +32,9 @@ h3{
 	border-radius: 20px;
 	border-color: red;
 	padding-left: 20px;
+	@media (max-width: 600px) {
+		font-size: 17px;
+	}
 }
 `;
 

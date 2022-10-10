@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 export const ProfileContent = styled.div`
 display: flex;
-margin-left: 60px;
-border:solid;
+width: 90%;
+margin:0 auto;
 border-radius: 20px;
 background-color: #e6e6fa;
+
 `
 
 export const ProfileBody = styled.div`
@@ -13,11 +14,14 @@ display:flex;
 align-items: center;
 justify-content: center;
 margin: 0 auto;
+@media (max-width: 600px) {
+    flex-direction: column;
+  }
 img{
     width: 30vh;
     height: 30vh;
     border-radius: 100px;
-    border:solid;
+    padding:10px;
 }
 `
 
@@ -66,7 +70,7 @@ color:white;
 
 export const MybookBody = styled.div`
     display: flex;
-    @media (max-width: 600px) {
+    @media (max-width: 730px) {
     flex-direction: column;
   }
 h2{
@@ -86,6 +90,7 @@ h2{
 `
 export const Content = styled.div`
 margin-left: 20px;
+margin-bottom: 30px;
 h3{
    display: flex;
    justify-content: center;
