@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+<img height="150" width="400" src="./src/assets/images/readme_img.jpeg"> <br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# LiteraBooks
 
-## Available Scripts
+<a href='https://literabooks.vercel.app/'>  Teste aqui!</a>
 
-In the project directory, you can run:
+# Tabela de Conteúdos
 
-### `npm start`
+* [Resumo](#resumo)
+* [Funcionalidades](#funcionalidades)
+* [Tecnologias](#tecnologias)
+* [Pré-Requisitos](#pre-requisitos)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Resumo
+ <h3>Você poderá fazer seu cadastro na nossa rede social e preencher seu perfil informando algumas de suas preferências, como: autor favorito, genêros favoritos, livro favorito, meta de leitura anual e muito mais!</h3>
+<h3>  Ao entrar em nossa plataforma você receberá sugestões de livros baseados nos seus gostos preferidos, vendo um belo resumo do livro. </h3> 
+<h3>  Além disso, você poderá ver quais as últimas leituras de outros usuários e saber o que eles acharam dos livros! </h3><br>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+# Funcionalidades
+<details>
+    <summary><font size="4">Login e Cadastro </font></summary>
+   
+</details>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<details>
+    <summary><font size="4">Escolha de preferências</font></summary>
+   <h3> -  Ao realizar o cadastro você fornece informações sobre seus gostos literários que ficaram salvos no nosso banco de dados e será usado para nos ajudar a fornecer as melhores indicações de livros para você! 🙂</h3>
+   
 
-### `npm run build`
+</details>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<details>
+    <summary><font size="4">Meta de leitura</font></summary>
+   <h3> -  Aqui você nos dirá quantos livros pretende ler esse ano. </h3>
+   <h3> -  Que tal se desafiar e tentar bater a meta? 😉 </h3> 
+</details>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<details>
+    <summary><font size="4">Timeline</font></summary>
+   <h3> -  Aqui você terá uma série de indicações literárias para você. Tudo isso pensado e personalizado especialmente para você! </h3>
+   <h3> -  Clique nas nossas indicações e veja um breve resumo do livro, quem sabe ele não pode ser sua próxima leitura? 🙃 </h3>
+  
+</details>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<details>
+    <summary><font size="4">Comunidade</font></summary>
+   <h3> -  Na página de nossa comunidade você poderá ver quais nossos outro usuários que são leitores assíduos assim como você!</h3>
+   <h3> -  Conheça os gêneros literários preferidos de seus amigos!</h3> 
+   <h3> -  Veja qual livro e autor preferido do seus amigos!</h3> 
+</details> 
 
-### `npm run eject`
+<details>
+    <summary><font size="4">Perfil do usuário</font></summary>
+   <h3> -  Aqui você verá um resumo de seus gostos literários preferidos </h3>
+   <h3> -  Veja também quais as resenhas literárias você já escreveu </h3>
+   <h3> -  Não escreveu nenhuma? Não perde tempo, faz aquele resumo bem legal do seu livro preferido e convença seus amigos a lerem também!! </h3>
+</details>
+<details>
+    <summary><font size="4"> Responsividade</font></summary>
+   <h3>   Que tal acessar nossa plataforma do seu celular? Ou do seu tableta? Ou então você é do tipo que prefere computador?  </h3>
+   <h3>  Não importa, aqui você fica livre para acessar nossa rede social de onde você quiser, pois nosso site é totalmente responsivo.  </h3>
+</details>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Tecnologias
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<details>
+    <summary><font size="4">React e styled-Component</font></summary>
+  <h3> Nesse projeto fizemos uma Single-Page Application (SPA) para uma rede social onde usuário compartilham suas experiências literárias, usando React Router, styled component e consumindo uma API!</h3>
+</details>
 
-## Learn More
+<details>
+    <summary><font size="4">Testes e2e</font></summary>
+  <h3> Realizamos testes de ponta a ponta utilizando a tecnologia cypress para testarmos a integração do nosso front-end e do nosso Back-End e garantir o correto funcionamento da nossa rede social.</h3>
+</details>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<img  height="80" width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" /> 
+<img height="80" width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" />
 
-### Code Splitting
+# Pré-Requisitos
+<h3> Antes de começar você precisará ter instalado na sua máquina um setup de um projeto react, o que inclui:<a href='https://www.devmedia.com.br/como-instalar-o-node-js-npm-e-o-react-no-windows/40329'> npm </a> e create-react-app (caso você queira começar o projeto do zero). Além disso, é bom ter um editor para trabalhar com o código como o <a href='https://code.visualstudio.com/download' > VSCode.</a> </h3>
+<h3> Não esqueça também de ir no <a href='https://github.com/CaioVitor1/literaBooks_back' > repositório do back-end</a> do nosso projeto para conferir seu funcionamento para testá-lo na sua máquina  </h3>
+<h3> <b>Rodando o projeto em sua máquina:</b> </h3>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
 
-### Analyzing the Bundle Size
+ # Clone o repositório do projeto:
+ git clone</b> https://github.com/CaioVitor1/literaBooks_Front.git
+ # Acesse a pasta do projeto:
+ cd literabooks
+ # Instale as dependencias:
+  npm i
+ # Execute a aplicação em modo de desenvolvimento: 
+ npm start
+# O servidor irá rodar na porta 3000. Acesse: http://localhost:3000/ 
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+Made with love by <a href='https://www.linkedin.com/in/caiovitor33/'> Caio Vitor </a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    
