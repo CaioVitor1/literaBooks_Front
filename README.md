@@ -1,6 +1,8 @@
-<img height="150" width="400" src="./src/assets/images/readme_img.jpeg"> <br>
+# <p align = "center"> Projeto LiteraBooks </p>
 
-# LiteraBooks
+<p align="center">
+<img height="150" width="400" src="./src/assets/images/readme_img.jpeg"> <br>
+</p>
 
 <a href='https://literabooks.vercel.app/'>  Teste aqui!</a>
 
@@ -78,11 +80,15 @@
 </details>
 
 <br>
-
+<div display='flex'>
 <img  height="80" width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" /> 
 <img height="80" width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" />
+</div>
+
 
 # Pré-Requisitos
+
+
 <h3> Antes de começar você precisará ter instalado na sua máquina um setup de um projeto react, o que inclui:<a href='https://www.devmedia.com.br/como-instalar-o-node-js-npm-e-o-react-no-windows/40329'> npm </a> e create-react-app (caso você queira começar o projeto do zero). Além disso, é bom ter um editor para trabalhar com o código como o <a href='https://code.visualstudio.com/download' > VSCode.</a> </h3>
 <h3> Não esqueça também de ir no <a href='https://github.com/CaioVitor1/literaBooks_back' > repositório do back-end</a> do nosso projeto para conferir seu funcionamento para testá-lo na sua máquina  </h3>
 <h3> <b>Rodando o projeto em sua máquina:</b> </h3>
