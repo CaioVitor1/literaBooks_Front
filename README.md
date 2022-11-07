@@ -70,8 +70,13 @@
 # Tecnologias
 
 <details>
+    <summary><font size="4">JavaScript</font></summary>
+  <h3> Toda a lógica de programação da aplicação foi desenvolvida usando JavaScript.</h3>
+</details>
+
+<details>
     <summary><font size="4">React e styled-Component</font></summary>
-  <h3> Nesse projeto fizemos uma Single-Page Application (SPA) para uma rede social onde usuário compartilham suas experiências literárias, usando React Router, styled component e consumindo uma API!</h3>
+  <h3> Nesse projeto utilizamos o framework React para construir uma Single-Page Application (SPA) para uma rede social onde usuário compartilham suas experiências literárias, usando React Router, styled component e consumindo uma API!</h3>
 </details>
 
 <details>
@@ -81,6 +86,7 @@
 
 <br>
 <div display='flex'>
+ <img  height="80" width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
 <img  height="80" width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" /> 
 <img height="80" width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" />
 </div>
