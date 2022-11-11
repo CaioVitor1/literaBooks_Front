@@ -45,7 +45,7 @@ export default function OtherUsers(){
     }, []);
 
     async function getReviewsUser(){
-        const promise = axios.get(`https://literabooks.herokuapp.com/reviews/user/${idUser}`, config)
+        const promise = axios.get(`http://localhost:5000/reviews/user/${idUser}`, config)
         promise
         .then(res => {
             
@@ -56,7 +56,7 @@ export default function OtherUsers(){
         }) 
     }
     async function getInfoUser(){
-        const promise = axios.get(`https://literabooks.herokuapp.com/infos/users/${idUser}`, config)
+        const promise = axios.get(`http://localhost:5000/infos/users/${idUser}`, config)
         promise
         .then(res => {
            

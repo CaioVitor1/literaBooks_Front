@@ -43,7 +43,7 @@ export default function ProfileUser(){
     }, []);
 
     async function getReviewsUser(){
-        const promise = axios.get("https://literabooks.herokuapp.com/reviews/user", config)
+        const promise = axios.get("http://localhost:5000/reviews/user", config)
         promise
         .then(res => {
            
@@ -54,7 +54,7 @@ export default function ProfileUser(){
         }) 
     }
     async function getInfoUser(){
-        const promise = axios.get("https://literabooks.herokuapp.com/infos/users", config)
+        const promise = axios.get("http://localhost:5000/infos/users", config)
         promise
         .then(res => {
           

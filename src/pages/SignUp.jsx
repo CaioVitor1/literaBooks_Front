@@ -4,6 +4,8 @@ import { useState, useContext } from 'react';
 import axios from "axios";
 import UserContext from "../context/UserContext"
 import { SignContent, Button } from "../components/authComponent";
+import styled from "styled-components";
+import user from "../assets/images/default-user.png"
 
 export default function SignUp(){
     const navigate = useNavigate();
@@ -11,17 +13,37 @@ export default function SignUp(){
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
     const [image, setImage] = useState("")
+   
     const { token, setToken } = useContext(UserContext);
-    function register () {
+    
+    async function register () {
+        console.log("a imagem é: ")
+        console.log(image.name)
+
+        const formData = new FormData();
+        formData.append('image', image);
+       console.log(formData)
+       
+       const headers = {
+        'headers': {
+            'Content-Type': 'application-json'
+        }
+       }
         const body = {
-            name,
-            email,
-            password,
-            image
+            image: formData
         }
        console.log(body)
+
+        await axios.post("http://localhost:5000/upload", formData, headers)
+       .then((response) => {
+        console.log(response.data.content)
+        setImage(response.data.content)
+       }).catch((err) => {
+        console.log(err.response)
+        alert("Não foi possível realizar o upload dessa imagem. Tente novamente!")
+       })
        /*
-        const promise = axios.post("https://literabooks.herokuapp.com/signup", body)
+        const promise = axios.post("http://localhost:5000/signup", body)
         promise
         .then(res => {
            
@@ -50,8 +72,12 @@ return (
             <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="senha" />
            
             <h3> Foto do perfil</h3> <br />
-            
-            <input type="file" name="imagem" onChange={(e) => setImage(e.target.files[0])}/> <br /> 
+            <Upload>
+                <input type="file" name="imagem" onChange={(e) => setImage(e.target.files[0])}/> <br /> 
+                {(image === "") && (<img src={user} alt=''/>)}
+                {(image !== "") && (<img src={URL.createObjectURL(image)} alt='' />)}
+            </Upload>
+           
             
             
            <Button data-cy="submit" onClick={register}>
@@ -62,6 +88,24 @@ return (
     </>
 )
 }
+
+const Upload = styled.div` 
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+input{
+    margin-top: 20px;
+    background-color:#fafad2; 
+}
+img{
+    
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+`
 
 
 
