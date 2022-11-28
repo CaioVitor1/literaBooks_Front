@@ -28,6 +28,7 @@ function ListReviews({id, title, genre, author, navigate, image}){
 export default function ProfileUser(){
     const navigate = useNavigate();
     const localToken = localStorage.getItem("token");
+    const [url, setUrl] = useState("http://localhost:5000/upload/") 
     const config = {
         headers: {
             Authorization: `Bearer ${localToken}`
@@ -41,10 +42,9 @@ export default function ProfileUser(){
     useEffect(() => {
         getInfoUser();
     }, []);
-
+    
     async function getReviewsUser(){
-        const promise = axios.get("http://localhost:5000/reviews/user", config)
-        promise
+        await axios.get("http://localhost:5000/reviews/user", config)
         .then(res => {
            
             setMyReviews(res.data)
@@ -54,11 +54,12 @@ export default function ProfileUser(){
         }) 
     }
     async function getInfoUser(){
-        const promise = axios.get("http://localhost:5000/infos/users", config)
+        const promise = axios.get("http://localhost:5000/infos/user", config)
         promise
         .then(res => {
-          
             setInfoUser(res.data)
+            setUrl("http://localhost:5000/upload/" + res.data.image)
+            console.log(url)
         })
         .catch(res => {
             alert("an error has occurred in requistion ")
@@ -70,7 +71,7 @@ export default function ProfileUser(){
             <Title />
             <ProfileContent>
                 <ProfileBody>
-                    <img src={infoUser.image} alt='' />
+                    <img src={url} alt='' />
                     <ProfileInfos>
                         <h2> {infoUser.name}</h2>
                         <h3> Livro favorito: {infoUser.favoriteBook}</h3>

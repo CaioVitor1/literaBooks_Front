@@ -20,12 +20,21 @@ input {
     color: black;
     margin-left: 18px;
     margin-bottom: 13px;
+    :last-child{
+        margin-bottom: 0px;
+    }
 }
 h3{
+    margin: 20px 0px 5px 18px;
     font-size: 20px;
     font-family: 'Lato', sans-serif;
-    margin-top:20px;
-    margin-left: 18px;
+}
+h4{
+    font-size: 13px;
+    color: gray;
+    width: 320px;
+    margin-left: 20px;
+
 }
 button{
     width: 100px;
