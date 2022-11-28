@@ -40,7 +40,7 @@ return (
             <h3> Email</h3>
             <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
             <h3> Senha</h3>
-            <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="senha" />
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="senha" />
            <Button data-cy="submit" onClick={login}>
                 Entrar
            </Button>

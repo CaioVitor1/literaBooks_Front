@@ -4,15 +4,16 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import {CommunityBody, UserProfile, UserProfileInfos, Users} from "../components/CommunityComponent"
 
-function ListUser({id, name, favoriteBook, favoriteAuthor, image, navigate}) {
+function ListUser({id, name, favoriteBook, favoriteAuthor, image, navigate, url}) {
     function seeMoreInfos(){
       
         navigate(`/user/${id}`)
     }
+    let preview = url + image
 return (
 <Users>
     <UserProfile>
-        <img src={image} alt='' />
+        <img src={preview} alt='' />
         <UserProfileInfos>
             <h3> {name} </h3>
             <h4> Livro preferido: {favoriteBook}</h4>
@@ -26,7 +27,9 @@ return (
 
 export default function Community(){
     const navigate = useNavigate();
-    const [usersInfos, setUsersInfos] = useState([])
+    const [usersInfos, setUsersInfos] = useState([]);
+    const [url, setUrl] = useState("http://localhost:5000/upload/");
+
     useEffect(() => {
         getUsers();
     }, []);
@@ -55,7 +58,7 @@ export default function Community(){
         <CommunityBody>
             <h2> Conheça novos amigos e compartilhem experiências literárias</h2>
         </CommunityBody>
-        {usersInfos.map((user) => <ListUser navigate={navigate} id={user.id} image={user.image} name={user.name} genres={user.genres} favoriteBook={user.favoriteBook} favoriteAuthor={user.favoriteAuthor}  />)}
+        {usersInfos.map((user) => <ListUser url={url} navigate={navigate} id={user.id} image={user.image} name={user.name} genres={user.genres} favoriteBook={user.favoriteBook} favoriteAuthor={user.favoriteAuthor}  />)}
     
         </>
     )
