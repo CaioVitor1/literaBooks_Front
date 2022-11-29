@@ -9,6 +9,7 @@ display: flex;
 export const Sidebar = styled.div`
 padding: 10px;
 margin-left: 20px;
+width: 40%;
 `
 
 export const Goal = styled.div`
