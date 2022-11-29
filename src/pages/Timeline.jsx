@@ -47,17 +47,16 @@ export default function Timeline(){
     }, []);
 
     async function getRecommendations(){
-        const promise = axios.get("https://literabooks.herokuapp.com/reviews/getRecommendations", config)
+        const promise = axios.get("http://localhost:5000/reviews/getRecommendations", config)
         promise
         .then(res => {
-            
-            
             setFirst(res.data[0].first)
             setSecond(res.data[0].second)
             setThirt(res.data[0].thirt)
         })
         .catch(res => {
             alert("an error has occurred in requistion ")
+            console.log(res.data)
         }) 
 
 

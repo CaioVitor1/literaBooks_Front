@@ -26,7 +26,7 @@ export default function ReadingGoal(){
             readingGoals: countNumber
          }   
             
-        const promise = axios.post("https://literabooks.herokuapp.com/preferences/readingGoals", body, config)
+        const promise = axios.post("http://localhost:5000/preferences/readingGoals", body, config)
         promise
         .then(res => {
            

@@ -44,8 +44,7 @@ margin-top: 30px;
 
 display: flex;
 flex-direction: column;
-justify-content: center;
-align-items: center;
+
 `
 
 export const NewReading = styled.div`
@@ -70,8 +69,14 @@ color:white;
 
 export const MybookBody = styled.div`
     display: flex;
+    justify-content: center;
+   
+   
     @media (max-width: 730px) {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
   }
 h2{
     margin: 40px 0px;
@@ -91,6 +96,7 @@ h2{
 export const Content = styled.div`
 margin-left: 20px;
 margin-bottom: 30px;
+width: 50%;
 h3{
    display: flex;
    justify-content: center;
