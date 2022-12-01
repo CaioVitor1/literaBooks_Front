@@ -2,9 +2,11 @@
 
 <p align="center">
 <img height="150" width="400" src="./src/assets/images/readme_img.jpeg"> <br>
+<img height="450" width="950" src="./src/assets/gifs/literabooks.gif"> <br> 
 </p>
 
-<a href='https://literabooks.vercel.app/'>  Teste aqui!</a>
+
+
 
 # Tabela de Conteúdos
 
