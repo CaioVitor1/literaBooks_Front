@@ -10,8 +10,7 @@ export default function LeftBar(){
     const [countBooks, setCountBooks] = useState(2);
     const [title, setTitle] = useState("Steve Jobs");
     const localToken = localStorage.getItem("token");
-    console.log("o localtoken é: ")
-    console.log(localToken)
+
     const config = {
         headers: {
             Authorization: `Bearer ${localToken}`
@@ -26,7 +25,7 @@ export default function LeftBar(){
         const promise = axios.get(" http://localhost:5000/infos/user", config)
         promise
         .then(res => {
-            console.log("está aqui no then")
+            
             setCountBooks(res.data.readingGoals);
             setNext(res.data.nextReading);
         })

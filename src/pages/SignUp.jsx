@@ -14,10 +14,9 @@ export default function SignUp(){
     const [name, setName] = useState("");
     const [image, setImage] = useState("")
     const [preview, setPreview] = useState()
-    const [url, setUrl] = useState()
     const [dados, setDados] = useState("")
     const { token, setToken } = useContext(UserContext);
-    
+    let url = ""
     useEffect(() => {
         if(image){
             const reader = new FileReader()
@@ -50,7 +49,7 @@ export default function SignUp(){
         await axios.post("https://api.cloudinary.com/v1_1/deuo6yxnu/image/upload", formData)
        .then((res) => {
         console.log(res.data.url)
-        setUrl(res.data.url)
+        url = res.data.url
         console.log("a url é: ")
         console.log(url)
        }).catch((err) => {
@@ -61,7 +60,7 @@ export default function SignUp(){
        
       
 
-     //sendData()
+     sendData()
         
     }
     async function sendData(){

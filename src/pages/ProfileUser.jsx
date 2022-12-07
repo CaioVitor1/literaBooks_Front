@@ -27,8 +27,7 @@ function ListReviews({id, title, genre, author, navigate, image}){
 
 export default function ProfileUser(){
     const navigate = useNavigate();
-    const localToken = localStorage.getItem("token");
-    const [url, setUrl] = useState(" http://localhost:5000/upload/") 
+    const localToken = localStorage.getItem("token"); 
     const config = {
         headers: {
             Authorization: `Bearer ${localToken}`
@@ -58,20 +57,18 @@ export default function ProfileUser(){
         promise
         .then(res => {
             setInfoUser(res.data)
-            setUrl(" http://localhost:5000/upload/" + res.data.image)
-            console.log(url)
         })
         .catch(res => {
             alert("an error has occurred in requistion ")
         }) 
     }
-    console.log(infoUser)
+    
     return(
         <>
             <Title />
             <ProfileContent>
                 <ProfileBody>
-                    <img src={url} alt='' />
+                    <img src={infoUser.image} alt='' />
                     <ProfileInfos>
                         <h2> {infoUser.name}</h2>
                         <h3> Livro favorito: {infoUser.favoriteBook}</h3>
