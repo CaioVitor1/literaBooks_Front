@@ -28,7 +28,7 @@ return (
 export default function Community(){
     const navigate = useNavigate();
     const [usersInfos, setUsersInfos] = useState([]);
-    const [url, setUrl] = useState("http://localhost:5000/upload/");
+    const [url, setUrl] = useState(" http://localhost:5000/upload/");
 
     useEffect(() => {
         getUsers();
@@ -40,7 +40,7 @@ export default function Community(){
         }
     };
     async function getUsers(){
-        const promise = axios.get("http://localhost:5000/infos/everyUsers", config)
+        const promise = axios.get(" http://localhost:5000/infos/everyUsers", config)
         promise
         .then(res => {
         

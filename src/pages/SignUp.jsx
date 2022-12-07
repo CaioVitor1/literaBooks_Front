@@ -14,7 +14,8 @@ export default function SignUp(){
     const [name, setName] = useState("");
     const [image, setImage] = useState("")
     const [preview, setPreview] = useState()
-
+    const [url, setUrl] = useState()
+    const [dados, setDados] = useState("")
     const { token, setToken } = useContext(UserContext);
     
     useEffect(() => {
@@ -34,47 +35,56 @@ export default function SignUp(){
     async function register () {
         console.log("a imagem é: ")
         console.log(image)
-        
         const formData = new FormData();
-        formData.append('image', image);
+        formData.append('file', image);
+        formData.append('upload_preset', 'literaBooks')
         console.log(formData)
        
        const headers = {
         'headers': {
-            'Content-Type': 'application-json'
+            'Content-Type': 'application-json',
+            
         }
        }
-       const body = {
-        name,
-        email,
-        password,
-        image: image.name
-    }
-       console.log(body)
  
-        await axios.post("http://localhost:5000/upload", formData, headers)
+        await axios.post("https://api.cloudinary.com/v1_1/deuo6yxnu/image/upload", formData)
        .then((res) => {
-        console.log(res.data.content)
-        
+        console.log(res.data.url)
+        setUrl(res.data.url)
+        console.log("a url é: ")
+        console.log(url)
        }).catch((err) => {
         console.log(err)
         alert("Não foi possível realizar o upload dessa imagem. Tente novamente!")
         return
        })
+       
       
-        const promise = axios.post("http://localhost:5000/signup", body)
-        promise
-        .then(res => {
-            console.log(res.data)
-            setToken(res.data)
-            localStorage.setItem("token", res.data);
-            navigate('/favoriteGenre');
-        })
-        .catch(res => {
-            
-            alert("Você inseriu dados inválidos ou já cadastrados. A senha precisa conter 8 digitos, letras maiúsculas, minúsculas e um caractere especial")
-        })  
+
+     //sendData()
         
+    }
+    async function sendData(){
+        const body = {
+            name,
+            email,
+            password,
+            image: url
+        }
+    
+           console.log(body)
+    
+            await axios.post("http://localhost:5000/signup", body)
+            .then(res => {
+                console.log(res.data)
+                setToken(res.data)
+                localStorage.setItem("token", res.data);
+                navigate('/favoriteGenre');
+            })
+            .catch(res => {
+                
+                alert("Você inseriu dados inválidos ou já cadastrados. A senha precisa conter 8 digitos, letras maiúsculas, minúsculas e um caractere especial")
+            })  
     }
 
 return (
@@ -92,7 +102,7 @@ return (
             <h4>A senha precisa conter 8 digitos, letras maiúsculas, minúsculas e um caractere especial </h4>
             <h3> Selecione sua foto do perfil</h3> <br />
             <Upload>
-                <input accept="image/*" type="file" name="imagem" onChange={(e) => setImage(e.target.files[0])}/> <br /> 
+                <input accept="image/*" type="file" name="image" onChange={(e) => setImage(e.target.files[0])}/> <br /> 
                 {(preview === "") && (<img src={user} alt=''/>)}
                 {(preview !== "") && (<img src={preview} alt='' />)}
             </Upload>

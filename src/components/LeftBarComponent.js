@@ -23,7 +23,7 @@ export default function LeftBar(){
 
     async function getUsersInfo(){
        
-        const promise = axios.get("http://localhost:5000/infos/user", config)
+        const promise = axios.get(" http://localhost:5000/infos/user", config)
         promise
         .then(res => {
             console.log("está aqui no then")
