@@ -37,7 +37,7 @@ export default function NewReading(){
             image,
             genreId
         }
-        const promise = axios.post(" http://localhost:5000/reviews/register", body, config)
+        const promise = axios.post("https://litera-books-back.vercel.app/reviews/register", body, config)
         promise
         .then(res => {
            

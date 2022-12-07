@@ -40,7 +40,7 @@ export default function Preferences(){
 		}
 		
        
-        const promise = axios.post(" http://localhost:5000/preferences/genres", body, config)
+        const promise = axios.post("https://litera-books-back.vercel.app/preferences/genres", body, config)
         promise
         .then(res => {
 			

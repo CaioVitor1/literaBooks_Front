@@ -47,7 +47,7 @@ export default function Timeline(){
     }, []);
 
     async function getRecommendations(){
-        const promise = axios.get(" http://localhost:5000/getRecommendations", config)
+        const promise = axios.get("https://litera-books-back.vercel.app/getRecommendations", config)
         promise
         .then(res => {
             setFirst(res.data[0].first)

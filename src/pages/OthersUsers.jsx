@@ -30,7 +30,7 @@ export default function OtherUsers(){
     const { idUser } = useParams();
     const [myReviews, setMyReviews] = useState([]);
     const [infoUser, setInfoUser] = useState([]);
-    const [url, setUrl] = useState(" http://localhost:5000/upload/") 
+    const [url, setUrl] = useState("https://litera-books-back.vercel.app/upload/") 
   
     const localToken = localStorage.getItem("token");
     const navigate = useNavigate()
@@ -47,7 +47,7 @@ export default function OtherUsers(){
     }, []);
 
     async function getReviewsUser(){
-        const promise = axios.get(` http://localhost:5000/reviews/user/${idUser}`, config)
+        const promise = axios.get(`https://litera-books-back.vercel.app/reviews/user/${idUser}`, config)
         promise
         .then(res => {
             
@@ -58,7 +58,7 @@ export default function OtherUsers(){
         }) 
     }
     async function getInfoUser(){
-        const promise = axios.get(` http://localhost:5000/infos/users/${idUser}`, config)
+        const promise = axios.get(`https://litera-books-back.vercel.app/infos/users/${idUser}`, config)
         promise
         .then(res => {
            

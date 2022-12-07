@@ -38,7 +38,7 @@ export default function Community(){
         }
     };
     async function getUsers(){
-        const promise = axios.get(" http://localhost:5000/infos/everyUsers", config)
+        const promise = axios.get("https://litera-books-back.vercel.app/infos/everyUsers", config)
         promise
         .then(res => {
             setUsersInfos(res.data)

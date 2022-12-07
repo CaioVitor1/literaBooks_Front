@@ -73,7 +73,7 @@ export default function SignUp(){
     
            console.log(body)
     
-            await axios.post("http://localhost:5000/signup", body)
+            await axios.post("https://litera-books-back.vercel.app/signup", body)
             .then(res => {
                 console.log(res.data)
                 setToken(res.data)

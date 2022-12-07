@@ -43,7 +43,7 @@ export default function ProfileUser(){
     }, []);
     
     async function getReviewsUser(){
-        await axios.get(" http://localhost:5000/reviews/user", config)
+        await axios.get("https://litera-books-back.vercel.app/reviews/user", config)
         .then(res => {
            
             setMyReviews(res.data)
@@ -53,7 +53,7 @@ export default function ProfileUser(){
         }) 
     }
     async function getInfoUser(){
-        const promise = axios.get(" http://localhost:5000/infos/user", config)
+        const promise = axios.get("https://litera-books-back.vercel.app/infos/user", config)
         promise
         .then(res => {
             setInfoUser(res.data)

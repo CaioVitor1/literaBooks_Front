@@ -22,7 +22,7 @@ export default function LeftBar(){
 
     async function getUsersInfo(){
        
-        const promise = axios.get(" http://localhost:5000/infos/user", config)
+        const promise = axios.get("https://litera-books-back.vercel.app/infos/user", config)
         promise
         .then(res => {
             
