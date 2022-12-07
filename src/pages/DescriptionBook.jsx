@@ -29,7 +29,7 @@ export default function DescriptionBook(){
     }, []);
 
     async function getDescription(){
-        const promise = axios.get(`http://localhost:5000/reviews/${bookId}`, config)
+        const promise = axios.get(` http://localhost:5000/reviews/${bookId}`, config)
         promise
         .then(res => {
             

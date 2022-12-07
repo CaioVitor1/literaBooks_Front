@@ -49,9 +49,12 @@ display: flex;
 justify-content: center;
 align-items: center;
 margin: 10px;
+@media (max-width: 600px) {
+    flex-direction: column;
+  }
 img {
-width: 150px;
-height: 150px;
+width: 10vh;
+height: 10vh;
 margin: 20px 10px 20px 10px;
 }    
 h3{

@@ -23,7 +23,7 @@ export default function UsersPreferences(){
         if(!favoriteBook || !favoriteAuthor){
             alert("Por favor, preencha todos os campos!")
         }else{
-        const promise = axios.post("http://localhost:5000/preferences/userspreferences", body, config)
+        const promise = axios.post(" http://localhost:5000/preferences/userspreferences", body, config)
         promise
         .then(res => {
 			
