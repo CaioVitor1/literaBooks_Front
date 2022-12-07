@@ -3,7 +3,7 @@
 <p align="center">
 <img height="150" width="400" src="./src/assets/images/readme_img.jpeg"> <br>
 <h3> Quer testar o projeto você mesmo?</h3>
-<a href='https://literabooks.vercel.app/'><button>  Teste aqui!</button></a>
+➡️ <a href='https://literabooks.vercel.app/'><button>  Clique aqui!</button></a>
 <h3>Por favor, espere uns minutos e veja aqui abaixo um gif mostrando o funcionamento da plataforma :)</h3>
 <img height="400" width="750" src="./src/assets/gifs/literabooks.gif"> <br> 
 </p>
