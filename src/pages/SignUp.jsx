@@ -14,7 +14,6 @@ export default function SignUp(){
     const [name, setName] = useState("");
     const [image, setImage] = useState("")
     const [preview, setPreview] = useState()
-    const [dados, setDados] = useState("")
     const { token, setToken } = useContext(UserContext);
     let url = ""
     useEffect(() => {
@@ -50,16 +49,13 @@ export default function SignUp(){
        .then((res) => {
         console.log(res.data.url)
         url = res.data.url
-        console.log("a url é: ")
-        console.log(url)
+        
        }).catch((err) => {
         console.log(err)
         alert("Não foi possível realizar o upload dessa imagem. Tente novamente!")
         return
        })
        
-      
-
      sendData()
         
     }
@@ -71,11 +67,8 @@ export default function SignUp(){
             image: url
         }
     
-           console.log(body)
-    
             await axios.post("https://litera-books-back.vercel.app/signup", body)
             .then(res => {
-                console.log(res.data)
                 setToken(res.data)
                 localStorage.setItem("token", res.data);
                 navigate('/favoriteGenre');
