@@ -3,9 +3,10 @@ import Title from "../components/TitleComponent";
 import { useState, useContext, useEffect } from 'react';
 import axios from "axios";
 import UserContext from "../context/UserContext"
-import { SignContent, Button } from "../components/authComponent";
+import { SignContent, Submit, AuthBody} from "../components/authComponent";
 import styled from "styled-components";
 import user from "../assets/images/default-user.png"
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 export default function SignUp(){
     const navigate = useNavigate();
@@ -80,11 +81,12 @@ export default function SignUp(){
     }
 
 return (
-    <>
-        <Title />
+    <AuthBody>
+        <SignUpInfo>
         <SignContent>
-            <h3> Insira seu nome</h3>
-            <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="nome" />
+            <h2> Cadastro</h2>
+            <h3> Nome</h3>
+            <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Insira seu nome" />
             
             <h3> Email</h3>
             <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
@@ -92,8 +94,9 @@ return (
             <h3> Senha</h3>
             <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="senha" />
             <h4>A senha precisa conter 8 digitos, letras maiúsculas, minúsculas e um caractere especial </h4>
-            <h3> Selecione sua foto do perfil</h3> <br />
+           
             <Upload>
+            <h3> Selecione sua foto do perfil</h3> <br />
                 <input accept="image/*" type="file" name="image" onChange={(e) => setImage(e.target.files[0])}/> <br /> 
                 {(preview === "") && (<img src={user} alt=''/>)}
                 {(preview !== "") && (<img src={preview} alt='' />)}
@@ -101,12 +104,15 @@ return (
            
             
             
-           <Button data-cy="submit" onClick={register}>
+           <Submit data-cy="submit" onClick={register}>
                 Criar conta
-           </Button>
-           
+           </Submit>
+           <h3> Já possui uma conta? Faça <span onClick={() => (navigate('/signin'))}>login</span></h3>
         </SignContent>
-    </>
+
+        </SignUpInfo>
+      
+    </AuthBody>
 )
 }
 
@@ -117,16 +123,22 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 input{
-    margin-top: 20px;
-    background-color:#fafad2; 
+    margin-top: 10px;
 }
 img{
     
     width: 150px;
     height: 150px;
-    margin-bottom: 20px;
+   
 }
 `
 
 
+ 
+const SignUpInfo = styled.div`
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
