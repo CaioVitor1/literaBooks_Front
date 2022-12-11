@@ -1,6 +1,6 @@
 import challange from "../assets/images/challange.jpg"
 import { useEffect, useState } from "react";
-import { Button } from "../components/authComponent";
+import { Submit } from "../components/authComponent";
 import { ReadingGoalBody, Header, ChallangeBooks } from "../components/readingGoalComponent";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -53,7 +53,7 @@ export default function ReadingGoal(){
                 <img src={challange} alt='' />
                 <h3>Eu quero ler </h3> <input type="textarea" onChange={(e) => setCount(e.target.value)} value={count}/> <h3> livros em 2022</h3>
             </ChallangeBooks>
-            <Button onClick={sendCount}> Ir para tela inicial</Button>
+            <Submit onClick={sendCount}> Ir para tela inicial</Submit>
         </ReadingGoalBody>
     </>
     )

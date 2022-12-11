@@ -16,7 +16,7 @@ export default function Title(){
         <TitleBody>
             <h2>Litera<span>Books</span></h2>
             {(localToken === null) && (
-                <Auth>
+            <Auth>
                 <h4 onClick={() => navigate("/signin")}>  Login</h4>
                 <h4 onClick={() => navigate("/signup")}> Cadastro</h4>
             </Auth>
@@ -54,7 +54,7 @@ h2{
     font-style: italic;
     font-size: 50px;
     font-weight: 200;
-    color: #8b4513;
+    color: black;
 }
 span{
     font-family: 'Lato', sans-serif;
@@ -77,7 +77,7 @@ h4{
     font-style: normal;
     font-size: 25px;
     font-weight: 200;
-    color: #8b4513;
+    color: black;
     margin-bottom: 20px;
    
 }
@@ -93,7 +93,7 @@ margin-right: 10px;
 font-family: 'Lato', sans-serif;
 font-style: normal;
 font-size: 20px;
-color: #8b4513;
+color: black;
 margin-right: 80px;
 @media (max-width: 828px) {
     margin-right: 10px;
