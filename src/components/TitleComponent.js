@@ -1,7 +1,7 @@
 import { useNavigate, useEffect } from "react-router-dom";
 import styled from "styled-components";
 
-export default function Title(){
+export default function Title({background}){
    
     const localToken = localStorage.getItem("token");
     const navigate = useNavigate();
@@ -13,7 +13,7 @@ export default function Title(){
 
     
     return(
-        <TitleBody>
+        <TitleBody color={background}>
             <h2>Litera<span>Books</span></h2>
             {(localToken === null) && (
             <Auth>
@@ -36,16 +36,17 @@ export default function Title(){
 }
 
 const TitleBody = styled.div`
-margin: 40px 50px;
+padding: 40px 50px;
 border:solid;
 border-radius: 10px;
-border-color: #8b4513;
+border-color: gray;
 padding-bottom: 30px;
 border-width: 1px 0px;
 display: flex;
 justify-content: space-between;
 align-items: center;
-background-color: white;
+background-color: ${props => props.color};
+margin-bottom: 30px;
 @media (max-width: 600px) {
     flex-direction: column;
   }

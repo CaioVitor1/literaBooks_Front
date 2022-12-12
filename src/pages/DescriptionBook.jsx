@@ -5,13 +5,13 @@ import {Book,
         Genres,
         WantRead,
         DescriptionImage} from "../components/DescriptionBookComponent";
-import oneDay from "../assets/images/oneDay.jpg";
+
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"; 
 import axios from "axios";
 
 export default function DescriptionBook(){
-    const [book, setBook] = useState([oneDay]);
+    const [book, setBook] = useState([]);
     const [infos, setInfos] = useState([]);
     const { bookId } = useParams();
     const localToken = localStorage.getItem("token");

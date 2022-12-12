@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import LeftBar from "../components/LeftBarComponent";
 import {TimelineBody, 
         RecomendationsGenre,
-        Recomendations} from "../components/timelineComponent";
+        Recomendations,
+        GenreName} from "../components/timelineComponent";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 function RenderRecomendations({id, title, genre, image, genreId, navigate}){
@@ -19,10 +20,15 @@ function RenderRecomendations({id, title, genre, image, genreId, navigate}){
     if(genreId === 9){genre = "Espiritual"}
 
     return(
+        <>
+        <GenreName>
+            <h2> {genre}</h2>
+        </GenreName>
         <RecomendationsGenre onClick={() => navigate(`/bookdescription/${bookId}`)}>
-            <h4> {title} ({genre})</h4>
+            <h4> {title}</h4>
             <img src={image} alt=''/>
         </RecomendationsGenre>
+        </>
     )
 }
 

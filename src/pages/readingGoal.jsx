@@ -1,7 +1,7 @@
 import challange from "../assets/images/challange.jpg"
 import { useEffect, useState } from "react";
 import { Submit } from "../components/authComponent";
-import { ReadingGoalBody, Header, ChallangeBooks } from "../components/readingGoalComponent";
+import { ReadingGoalBody, Header, ChallangeBooks, ReadingGoalContent } from "../components/readingGoalComponent";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -41,8 +41,8 @@ export default function ReadingGoal(){
 }
 
     return(
-        <>
-            <ReadingGoalBody>
+        <ReadingGoalBody>
+            <ReadingGoalContent>
             <Header>
                 <h2> Inclua uma meta de leitura anual!</h2>
                 <h3> Aqui vai um desafio! Compartilhe com a gente sua meta de leitura e nos deixe
@@ -54,8 +54,8 @@ export default function ReadingGoal(){
                 <h3>Eu quero ler </h3> <input type="textarea" onChange={(e) => setCount(e.target.value)} value={count}/> <h3> livros em 2022</h3>
             </ChallangeBooks>
             <Submit onClick={sendCount}> Ir para tela inicial</Submit>
-        </ReadingGoalBody>
-    </>
+        </ReadingGoalContent>
+    </ReadingGoalBody>
     )
 }
 

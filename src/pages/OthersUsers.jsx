@@ -68,14 +68,14 @@ export default function OtherUsers(){
             alert("an error has occurred in requistion ")
         }) 
     }
-    let preview = url + infoUser.image
+    
     
     return(
         <>
         <Title />
         <ProfileContent>
                 <ProfileBody>
-                    <img src={preview} alt='' />
+                    <img src={infoUser.image} alt='' />
                     <ProfileInfos>
                         <h2>{infoUser.name}</h2>
                         <h3> Livro favorito: {infoUser.favoriteBook}</h3>

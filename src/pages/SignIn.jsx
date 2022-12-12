@@ -5,7 +5,6 @@ import UserContext from "../context/UserContext"
 import axios from "axios";
 import { SignContent, Submit, AuthBody } from "../components/authComponent";
 import picture from "../assets/images/leitor.jpg"
-
 export default function SignIn(){
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
