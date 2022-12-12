@@ -25,7 +25,7 @@ margin-top: 30px;
 `
 
 export const UserProfile = styled.div`
-background-color: #dcdcdc;
+background-color: white;
 width: 60%;
 border-radius: 20px;
 display: flex;
