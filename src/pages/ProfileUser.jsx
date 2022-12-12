@@ -10,7 +10,8 @@ import {NewReading,
         ReviewsProfile,
         Content,
         MybookBody,
-        Reviews } from "../components/ProfileComponent"
+        Reviews, 
+        AddReadingProfile} from "../components/ProfileComponent"
 
 function ListReviews({id, title, genre, author, navigate, image}){
     let bookId = id
@@ -74,6 +75,9 @@ export default function ProfileUser(){
                         <h3> Livro favorito: {infoUser.favoriteBook}</h3>
                         <h3> Autor preferido: {infoUser.favoriteAuthor}</h3>
                     </ProfileInfos>
+                    <AddReadingProfile onClick={() => navigate('/newreading')}>
+                         <h4> Nova Leitura! </h4> 
+                    </AddReadingProfile>
                 </ProfileBody>
                 
             </ProfileContent>
@@ -86,11 +90,10 @@ export default function ProfileUser(){
                         <Content>
                             <h3> Suas resenhas:</h3>
                             {myReviews.map((data) => <ListReviews navigate={navigate} image={data.image} id={data.id} title={data.title} genre={data.genre} author={data.author} />)}
+
                         </Content>
                     )}
-                    <NewReading>
-                       <h4 onClick={() => navigate('/newreading')}> Nova Leitura! </h4> 
-                    </NewReading>
+
                     
                 </MybookBody>
  

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const InitialPageBody = styled.div`
-background-color: #fff0f5;
+background: rgb(238,174,213);
+background: linear-gradient(90deg, rgba(238,174,213,0.5620448008304885) 0%, rgba(148,187,233,1) 58%); 
 padding: 20px;
 
 `
@@ -22,7 +23,8 @@ h2{
     font-style: normal;
     font-size: 60px;
     font-weight: 200;
-    color: #8b4513;
+    color: black;
+
     @media (max-width: 600px) {
         font-size: 50px;
   }
@@ -54,18 +56,24 @@ h3{
     font-style: normal;
     font-size: 23px;
     font-weight: 200;
-    color: #8b4513;
+    color: black;
     margin-bottom: 20px;
 }
 `
 
 export const Footer = styled.div` 
-margin-top: 50px 30px;
+margin: 50px 30px;
 display: flex;
 align-items: center;
-
 width: 40%;
 justify-content: center;
+@media (max-width: 700px) {
+    border:solid;
+    border-width: 1px;
+    border-radius: 20px;
+    width:70%;
+    margin-left:40px;
+  }
 img{
     margin-left:40px;
     width: 100px;

@@ -1,7 +1,7 @@
 import { useNavigate, useEffect } from "react-router-dom";
 import styled from "styled-components";
 
-export default function Title(){
+export default function Title({background}){
    
     const localToken = localStorage.getItem("token");
     const navigate = useNavigate();
@@ -13,10 +13,10 @@ export default function Title(){
 
     
     return(
-        <TitleBody>
+        <TitleBody color={background}>
             <h2>Litera<span>Books</span></h2>
             {(localToken === null) && (
-                <Auth>
+            <Auth>
                 <h4 onClick={() => navigate("/signin")}>  Login</h4>
                 <h4 onClick={() => navigate("/signup")}> Cadastro</h4>
             </Auth>
@@ -36,16 +36,17 @@ export default function Title(){
 }
 
 const TitleBody = styled.div`
-margin: 40px 50px;
+padding: 40px 50px;
 border:solid;
 border-radius: 10px;
-border-color: #8b4513;
+border-color: gray;
 padding-bottom: 30px;
 border-width: 1px 0px;
 display: flex;
 justify-content: space-between;
 align-items: center;
-background-color: white;
+background-color: ${props => props.color};
+margin-bottom: 30px;
 @media (max-width: 600px) {
     flex-direction: column;
   }
@@ -54,7 +55,7 @@ h2{
     font-style: italic;
     font-size: 50px;
     font-weight: 200;
-    color: #8b4513;
+    color: black;
 }
 span{
     font-family: 'Lato', sans-serif;
@@ -77,7 +78,7 @@ h4{
     font-style: normal;
     font-size: 25px;
     font-weight: 200;
-    color: #8b4513;
+    color: black;
     margin-bottom: 20px;
    
 }
@@ -93,7 +94,7 @@ margin-right: 10px;
 font-family: 'Lato', sans-serif;
 font-style: normal;
 font-size: 20px;
-color: #8b4513;
+color: black;
 margin-right: 80px;
 @media (max-width: 828px) {
     margin-right: 10px;

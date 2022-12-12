@@ -3,8 +3,8 @@ import Title from "../components/TitleComponent";
 import { useState, useContext } from "react";
 import UserContext from "../context/UserContext"
 import axios from "axios";
-import { SignContent, Button } from "../components/authComponent";
-
+import { SignContent, Submit, AuthBody } from "../components/authComponent";
+import picture from "../assets/images/leitor.jpg"
 export default function SignIn(){
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
@@ -34,19 +34,20 @@ export default function SignIn(){
     }
 
 return (
-    <>
-        <Title />
+    <AuthBody>
         <SignContent>
+            <img src={picture} alt='' />
+            <h2> Login</h2>
             <h3> Email</h3>
             <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
             <h3> Senha</h3>
             <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="senha" />
-           <Button data-cy="submit" onClick={login}>
+           <Submit data-cy="submit" onClick={login}>
                 Entrar
-           </Button>
-           
+           </Submit>
+           <h3> Ainda não possui uma conta? <span onClick={() => (navigate('/signup'))}>  Cadastre-se</span></h3>
         </SignContent>
-    </>
+   </AuthBody>
 )
 }
 

@@ -30,15 +30,19 @@ align-items: center;
 `
 
 export const DescriptionImage = styled.div`
-margin-left:20px;
+margin: 0 auto;
+
+width: 60%;
 img{
+margin: 0 auto;
 margin-bottom: 20px;
-width: 50vh;
+
 display: flex;
 justify-content: center;
 align-items: center;
 @media (max-width: 600px) {
-    margin: 0 auto;
+  width: 90%;
+  margin: 0 auto;
   }
 }
 

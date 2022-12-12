@@ -73,7 +73,8 @@ h3{
 }
 button{
 	height: 50px;
-	background-color: green;
+	background: rgb(238,174,213);
+	background: linear-gradient(90deg, rgba(238,174,213,0.5620448008304885) 0%, rgba(148,187,233,1) 58%); 
 	width: 30%;
 	display: flex;
 	align-items: center;
