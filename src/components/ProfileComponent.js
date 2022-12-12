@@ -83,6 +83,8 @@ background: linear-gradient(90deg, rgba(238,174,213,0.5620448008304885) 0%, rgba
 
 export const MybookBody = styled.div`
     display: flex;
+    justify-content: center;
+    align-items: center;
     @media (max-width: 600px) {
   }
 h2{
