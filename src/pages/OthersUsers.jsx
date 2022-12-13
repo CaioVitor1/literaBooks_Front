@@ -10,7 +10,8 @@ import {NewReading,
     ReviewsProfile,
     Content,
     MybookBody,
-    Reviews } from "../components/ProfileComponent";
+    Reviews, 
+    WithoutReview} from "../components/ProfileComponent";
 
     function ListReviews({id, title, genre, author, navigate, image}){
         const bookId = id
@@ -86,7 +87,7 @@ export default function OtherUsers(){
         </ProfileContent>
         <ReviewsProfile>
               <MybookBody>
-                  {(myReviews.length === 0) && (<h2> {infoUser.name} não cadastrou nenhuma resenha ainda! 🙁</h2>)}
+                  {(myReviews.length === 0) && (<WithoutReview><h2> {infoUser.name} não cadastrou nenhuma resenha ainda! 🙁</h2></WithoutReview>)}
                   {(myReviews.length !== 0) && (
                       <Content>
                           <h3> Últimas resenhas de {infoUser.name}:</h3>

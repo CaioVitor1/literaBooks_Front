@@ -14,7 +14,7 @@ import ProfileUser from "./pages/ProfileUser";
 import NewReading from "./pages/NewReading";
 import Community from "./pages/Community";
 import OthersUsers from "./pages/OthersUsers";
-
+import RecommendationBook from "./pages/recommendationDescription";
 import { useState } from "react";
 import UserContext from "./context/UserContext";
 
@@ -36,6 +36,7 @@ function App() {
               <Route path="/readingoal" element={<ReadingGoal />} />
               <Route path="/timeline" element={<Timeline />} />
               <Route path="/bookdescription/:bookId" element={<DescriptionBook />} />
+              <Route path="/bookrecommendation/:bookId" element={<RecommendationBook />} />
               <Route path="/profile" element={<ProfileUser />} />
               <Route path="/newreading" element={<NewReading />} />
               <Route path="/community" element={<Community />} />

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import LeftBar from "../components/LeftBarComponent";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import {NewReading, 
+import {WithoutReview, 
         ProfileBody,
         ProfileContent, 
         ProfileInfos, 
@@ -85,7 +85,7 @@ export default function ProfileUser(){
               
                 <MybookBody>
                     <LeftBar />
-                    {(myReviews.length === 0) && (<h2> Você não cadastrou nenhuma resenha ainda! 🙁</h2>)}
+                    {(myReviews.length === 0) && (<WithoutReview><h2> Você não cadastrou nenhuma resenha ainda! 🙁</h2></WithoutReview>)}
                     {(myReviews.length !== 0) && (
                         <Content>
                             <h3> Suas resenhas:</h3>

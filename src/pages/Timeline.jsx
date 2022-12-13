@@ -24,7 +24,7 @@ function RenderRecomendations({id, title, genre, image, genreId, navigate}){
         <GenreName>
             <h2> {genre}</h2>
         </GenreName>
-        <RecomendationsGenre onClick={() => navigate(`/bookdescription/${bookId}`)}>
+        <RecomendationsGenre onClick={() => navigate(`/bookrecommendation/${bookId}`)}>
             <h4> {title}</h4>
             <img src={image} alt=''/>
         </RecomendationsGenre>

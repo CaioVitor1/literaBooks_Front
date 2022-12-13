@@ -83,8 +83,6 @@ background: linear-gradient(90deg, rgba(238,174,213,0.5620448008304885) 0%, rgba
 
 export const MybookBody = styled.div`
     display: flex;
-    justify-content: center;
-    align-items: center;
     @media (max-width: 600px) {
   }
 h2{
@@ -103,13 +101,13 @@ h2{
 
 `
 export const Content = styled.div`
-margin-left: 10px;
-margin-bottom: 30px;
+margin: 0 auto;
 width: 65%;
 border-width: 1px;
+
 @media (max-width: 600px){
     width: 60%;
-    margin-left: 0px;
+   
 }
 h3{
    display: flex;
@@ -178,4 +176,8 @@ margin: 0 auto;
     width: 60%;
     margin: 0 auto;
   }
+`
+
+export const WithoutReview = styled.div`
+    padding-left:20px;
 `

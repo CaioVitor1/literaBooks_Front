@@ -26,17 +26,18 @@ display: flex;
 flex-direction: column;
 align-items: center;
 
+width: 100%;
 
 `
 
 export const DescriptionImage = styled.div`
 margin: 0 auto;
+width: 50%;
 
-width: 60%;
 img{
 margin: 0 auto;
 margin-bottom: 20px;
-
+width: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
