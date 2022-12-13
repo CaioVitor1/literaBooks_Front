@@ -5,7 +5,7 @@
 <h3> Quer testar o projeto você mesmo?</h3>
 ➡️ <a href='https://literabooks.vercel.app/'><button>  Clique aqui!</button></a>
 <h3>Por favor, espere uns minutos e veja aqui abaixo um gif mostrando o funcionamento da plataforma :)</h3>
-<img height="400" width="750" src="./src/assets/gifs/literabooks.gif"> <br> 
+<img height="400" width="750" src="./src/assets/gifs/litera_books.gif"> <br> 
 </p>
 
 
