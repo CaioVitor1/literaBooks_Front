@@ -1,6 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import Title from "../components/TitleComponent";
 import { useState, useContext } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import UserContext from "../context/UserContext"
 import axios from "axios";
 import { SignContent, Submit, AuthBody } from "../components/authComponent";
@@ -11,7 +14,7 @@ export default function SignIn(){
     const [password, setPassword] = useState("");
     const { token, setToken } = useContext(UserContext);
     const localToken = localStorage.getItem("token");
-  
+
     function login () {
         const body = {
             email,
@@ -25,17 +28,18 @@ export default function SignIn(){
            
             setToken(res.data)
             localStorage.setItem("token", res.data);
+            toast('Login realizado com sucesso!');
             navigate('/timeline');
         })
         .catch(res => {
-           
-            alert("Você inseriu dados inválidos")
+            toast('Você inseriu dados inválidos!');
         })
     }
 
 return (
     <AuthBody>
         <SignContent>
+        <ToastContainer />
             <img src={picture} alt='' />
             <h2> Login</h2>
             <h3> Email</h3>
