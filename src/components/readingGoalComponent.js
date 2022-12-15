@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 
 export const ReadingGoalBody = styled.div`
@@ -10,7 +10,7 @@ align-items: center;
 @media (max-width: 600px) {
     width: 90%;
   }
-`
+`;
 
 export const ReadingGoalContent = styled.div`
 width: 50%;
@@ -26,7 +26,7 @@ padding-bottom: 30px;
 @media (max-width: 600px) {
     width: 80%;
   }
-`
+`;
 
 export const Header = styled.div`
 margin-top: 40px;
@@ -54,7 +54,7 @@ h3{
    font-size:15px;
   }
 }
-`
+`;
 
 export const ChallangeBooks = styled.div`
 display: flex;
@@ -76,4 +76,4 @@ input{
 width: 30px;
 margin: 0px 5px;
 }
-`
+`;

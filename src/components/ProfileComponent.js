@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ProfileContent = styled.div`
 display: flex;
@@ -9,7 +9,7 @@ background-color: #e6e6fa;
 @media (max-width: 600px) {
    width: 70%;
   }
-`
+`;
 
 export const ProfileBody = styled.div`
 display:flex;
@@ -28,7 +28,7 @@ img{
     border-radius: 100px;
     padding:10px;
 }
-`
+`;
 
 export const ProfileInfos = styled.div`
 margin-left: 40px;
@@ -52,14 +52,14 @@ font-size: 20px;
     }
 }
 
-`
+`;
 
 export const ReviewsProfile = styled.div`
 margin-top: 30px;
 display: flex;
 flex-direction: column;
 
-`
+`;
 export const NewReading = styled.div`
 background-color: #8b4513;
 border:solid;
@@ -78,7 +78,7 @@ background: linear-gradient(90deg, rgba(238,174,213,0.5620448008304885) 0%, rgba
     margin: 0 auto;
     display:none
   }
-`
+`;
 
 
 export const MybookBody = styled.div`
@@ -99,7 +99,7 @@ h2{
     color: #8b4513
 }
 
-`
+`;
 export const Content = styled.div`
 margin: 0 auto;
 width: 65%;
@@ -123,7 +123,7 @@ h3{
    }
 }
 
-`
+`;
 export const Reviews = styled.div`
     border:solid;
     border-color: gray;
@@ -153,7 +153,7 @@ export const Reviews = styled.div`
         }
     }
     
-`
+`;
 
 export const AddReadingProfile = styled.div`
 background-color: #8b4513;
@@ -176,8 +176,8 @@ margin: 0 auto;
     width: 60%;
     margin: 0 auto;
   }
-`
+`;
 
 export const WithoutReview = styled.div`
     padding-left:20px;
-`
+`;

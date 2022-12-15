@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components';
 
 export const TimelineBody = styled.div`
 padding-top: 40px;
@@ -8,7 +8,7 @@ background: linear-gradient(90deg, rgba(238,174,213,0.5620448008304885) 0%, rgba
 @media (max-width: 600px) {
     width: 100%;
   }
-`
+`;
 export const Sidebar = styled.div`
 padding: 10px;
 margin-left: 20px;
@@ -19,7 +19,7 @@ width: 25%;
    display: flex;
    flex-direction: columns;
   }
-`
+`;
 
 export const Goal = styled.div`
 padding: 10px;
@@ -32,7 +32,7 @@ h3{
 font-size: 20px;
 margin:10px;
 }
-`
+`;
 
 export const NextReading = styled.div`
 padding: 10px;
@@ -46,7 +46,7 @@ h3{
 font-size: 20px;
 margin:10px;
 }
-`
+`;
 
 export const GoalInfos = styled.div`
 display: flex;
@@ -64,7 +64,7 @@ margin: 20px 10px 20px 10px;
 h3{
 font-size: 15px;
 }
-`
+`;
 
 export const NextReadingInfo = styled.div`
 display: flex;
@@ -82,7 +82,7 @@ img{
   height: 100%;
   
 }
-`
+`;
 
 export const Recomendations = styled.div`
 margin-top: 10px;
@@ -108,7 +108,7 @@ font-size:30px;
 color: black;
 margin-bottom: 20px;
 }
-`
+`;
 
 
 export const RecomendationsGenre = styled.div`
@@ -148,8 +148,8 @@ color: black;
   font-size: 20px;
 }
 }
-`
+`;
 
 export const GenreName = styled.div`
 
-`
+`;

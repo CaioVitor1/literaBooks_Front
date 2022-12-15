@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const NewReadingBody = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-`
+`;
 
 
 export const NewReadingTitle = styled.div`
@@ -22,7 +22,7 @@ font-size: 30px;
 color: #8b4513;
 }
 
-`
+`;
 export const NewReadingInfos = styled.div`
 display: flex;
 flex-direction: column;
@@ -73,4 +73,4 @@ select{
 margin: 10px 0px 18px 10px;
 
 }
-`
+`;

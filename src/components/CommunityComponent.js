@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const CommunityBody = styled.div`
 display: flex;
@@ -13,7 +13,7 @@ justify-content: center;
 align-items: center;
 }
 
-`
+`;
 
 export const Users = styled.div`
 display: flex;
@@ -22,7 +22,7 @@ justify-content: center;
 align-items: center;
 margin-top: 30px;
 
-`
+`;
 
 export const UserProfile = styled.div`
 background-color: white;
@@ -40,7 +40,7 @@ height: 20vh;
 
 border-radius: 100px;
 }
-`
+`;
 
 export const UserProfileInfos = styled.div`
 margin-top:10px;
@@ -59,4 +59,4 @@ margin-top: 60px;
 color:blue;
 font-size: 15px;
 }
-`
+`;

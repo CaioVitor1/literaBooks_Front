@@ -1,37 +1,37 @@
-import { useNavigate, useEffect } from "react-router-dom";
-import styled from "styled-components";
+import { useNavigate, useEffect, React } from 'react-router-dom';
+import styled from 'styled-components';
 
 export default function Title({background}){
    
-    const localToken = localStorage.getItem("token");
-    const navigate = useNavigate();
+	const localToken = localStorage.getItem('token');
+	const navigate = useNavigate();
 
-    function logout(){
-        localStorage.removeItem("token")
-        navigate('/')
-    }
+	function logout(){
+		localStorage.removeItem('token');
+		navigate('/');
+	}
 
     
-    return(
-        <TitleBody color={background}>
-            <h2>Litera<span>Books</span></h2>
-            {(localToken === null) && (
-            <Auth>
-                <h4 onClick={() => navigate("/signin")}>  Login</h4>
-                <h4 onClick={() => navigate("/signup")}> Cadastro</h4>
-            </Auth>
-            )}
-            {(localToken !== null) && (
-                <OptionsHeader>
-                    <h4 onClick={() => navigate('/timeline')}> Página inicial</h4>
-                    <h4 onClick={() => navigate('/community')}> Comunidade</h4>
-                    <h4 onClick={() => navigate('/profile')}> Meu perfil</h4>
-                    <h4 onClick={logout}> Sair</h4>
-                </OptionsHeader>
-            )}
+	return(
+		<TitleBody color={background}>
+			<h2>Litera<span>Books</span></h2>
+			{(localToken === null) && (
+				<Auth>
+					<h4 onClick={() => navigate('/signin')}>  Login</h4>
+					<h4 onClick={() => navigate('/signup')}> Cadastro</h4>
+				</Auth>
+			)}
+			{(localToken !== null) && (
+				<OptionsHeader>
+					<h4 onClick={() => navigate('/timeline')}> Página inicial</h4>
+					<h4 onClick={() => navigate('/community')}> Comunidade</h4>
+					<h4 onClick={() => navigate('/profile')}> Meu perfil</h4>
+					<h4 onClick={logout}> Sair</h4>
+				</OptionsHeader>
+			)}
                
-        </TitleBody>
-    )
+		</TitleBody>
+	);
         
 }
 
@@ -63,7 +63,7 @@ span{
     font-size: 50px;
     font-weight: 100;
 }
-`
+`;
 const Auth = styled.div`
 display:flex;
 justify-content: space-around;
@@ -82,7 +82,7 @@ h4{
     margin-bottom: 20px;
    
 }
-`
+`;
 
 const OptionsHeader = styled.div` 
 display: flex;
@@ -101,4 +101,4 @@ margin-right: 80px;
   }    
    
 }
-`
+`;
