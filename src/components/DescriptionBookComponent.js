@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const DescriptionBookBody = styled.div`
 display: flex;
@@ -18,7 +18,7 @@ text-align: justify;
 padding: 20px;
 }
 
-`
+`;
 
 export const DescriptionContent = styled.div`
 margin-left: 30px;
@@ -28,7 +28,7 @@ align-items: center;
 
 width: 100%;
 
-`
+`;
 
 export const DescriptionImage = styled.div`
 margin: 0 auto;
@@ -47,7 +47,7 @@ align-items: center;
   }
 }
 
-`
+`;
 
 export const WantRead = styled.div`
 margin: 0 auto;
@@ -65,7 +65,7 @@ h4{
 font-size: 20px;
 color:white;
 }
-`
+`;
 
 export const Book = styled.div`
 display: flex;
@@ -74,7 +74,7 @@ justify-content: center;
 align-items: center;
 margin: 0 auto;
 
-`
+`;
 
 export const Genres = styled.div`
 display: flex;
@@ -94,4 +94,4 @@ text-decoration: underline;
 text-decoration-color: green;
 margin: 5px 0px;
 }
-`
+`;

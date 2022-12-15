@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const InitialPageBody = styled.div`
 background: rgb(238,174,213);
 background: linear-gradient(90deg, rgba(238,174,213,0.5620448008304885) 0%, rgba(148,187,233,1) 58%); 
 padding: 20px;
 
-`
+`;
 
 export const Main = styled.div`
 margin-top:50px;
@@ -29,7 +29,7 @@ h2{
         font-size: 50px;
   }
 }
-`
+`;
 
 export const Image = styled.div`
 border-width: 1px;
@@ -43,7 +43,7 @@ img{
     margin: 0 auto;
     width: 70%;
 }
-`
+`;
 
 export const Options = styled.div`
 margin:20px 0px 0px 10px;
@@ -59,7 +59,7 @@ h3{
     color: black;
     margin-bottom: 20px;
 }
-`
+`;
 
 export const Footer = styled.div` 
 margin: 50px 30px;
@@ -86,7 +86,7 @@ h3{
     color: black;
     margin-left: 20px;
 }
-`
+`;
 
 export const Citations = styled.div`
 h4{
@@ -94,4 +94,4 @@ h4{
 margin: 10px 20px;
 font-size: 15px;
 }
-`
+`;

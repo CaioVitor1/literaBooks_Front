@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const PreferencesBody = styled.div`
 width: 70%;
@@ -45,7 +45,7 @@ flex-wrap: wrap;
 h4{
 	margin: 10px;
 }
-`
+`;
 
 export const Choice = styled.div`
 margin-right: 10px;
@@ -55,7 +55,7 @@ border-width:1px;
 width: 50%;
 margin: 0 auto;
 background-color: #e6e6fa;
-`
+`;
 
 export const Finalizing = styled.div` 
 margin-top: 40px;
@@ -84,4 +84,4 @@ button{
     font-size: 20px;
 	border-radius: 10px;
 }
-`
+`;

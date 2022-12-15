@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const AuthBody= styled.div`
 
@@ -6,7 +6,7 @@ border:solid;
 padding: 30px 0px;
 background: rgb(238,174,213);
 background: linear-gradient(90deg, rgba(238,174,213,0.5620448008304885) 0%, rgba(148,187,233,1) 58%); 
-`
+`;
 
 export const SignContent = styled.div`
 width: 70%;
@@ -68,7 +68,7 @@ img{
     width: 60%;
   }
 }
-`
+`;
 
 export const Submit = styled.div`
 background-color: #8b4513;
@@ -87,4 +87,25 @@ background: linear-gradient(90deg, rgba(238,174,213,0.5620448008304885) 0%, rgba
     width: 60%;
     font-size: 15px;
   }
-`
+`;
+
+export const Upload = styled.div` 
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+input{
+    margin-top: 10px;
+}
+img{  
+    width: 150px;
+    height: 150px; 
+}
+`;
+export const SignUpInfo = styled.div`
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;

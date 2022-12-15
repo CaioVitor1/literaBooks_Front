@@ -1,6 +1,4 @@
-import styled from "styled-components";
-
-
+import styled from 'styled-components';
 
 export const Background = styled.div`
 background-color: white;
@@ -14,7 +12,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 margin: 0 auto;
-`
+`;
 export const UsersPreferencesContent = styled.div`
 width: 90%;
 margin-top:40px;
@@ -60,5 +58,5 @@ width: 30%;
 border-radius: 10px;
 margin-bottom: 20px;
 }
-`
+`;
 
