@@ -6,7 +6,8 @@ import UserContext from "../context/UserContext"
 import { SignContent, Submit, AuthBody} from "../components/authComponent";
 import styled from "styled-components";
 import user from "../assets/images/default-user.png"
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function SignUp(){
     const navigate = useNavigate();
@@ -53,7 +54,8 @@ export default function SignUp(){
         
        }).catch((err) => {
         console.log(err)
-        alert("Não foi possível realizar o upload dessa imagem. Tente novamente!")
+        toast('Não foi possível realizar o upload dessa imagem. Tente novamente!!');
+
         return
        })
        
@@ -72,16 +74,26 @@ export default function SignUp(){
             .then(res => {
                 setToken(res.data)
                 localStorage.setItem("token", res.data);
+                toast('Cadastro realizado com sucesso!');
                 navigate('/favoriteGenre');
             })
             .catch(res => {
-                
-                alert("Você inseriu dados inválidos ou já cadastrados. A senha precisa conter 8 digitos, letras maiúsculas, minúsculas e um caractere especial")
+                toast.error('Você inseriu dados inválidos ou já cadastrados!');
             })  
     }
 
 return (
     <AuthBody>
+        <ToastContainer position="top-right"
+                        autoClose={5000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="light"/>
         <SignUpInfo>
         <SignContent>
             <h2> Cadastro</h2>
