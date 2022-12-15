@@ -25,21 +25,22 @@ export default function SignIn(){
         const promise = axios.post("https://litera-books-back.vercel.app/signin", body)
         promise
         .then(res => {
-           
+            toast.success('Login realizado com sucesso!');
             setToken(res.data)
             localStorage.setItem("token", res.data);
-            toast('Login realizado com sucesso!');
+            
             navigate('/timeline');
         })
         .catch(res => {
-            toast('Você inseriu dados inválidos!');
+            toast.error('Você inseriu dados inválidos!');
         })
     }
 
 return (
     <AuthBody>
-        <SignContent>
         <ToastContainer />
+        <SignContent>
+        
             <img src={picture} alt='' />
             <h2> Login</h2>
             <h3> Email</h3>
