@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 //import { useState } from "react";
 //import UserContext from "./context/UserContext";
 
@@ -41,6 +41,7 @@ function App() {
 					<Route path="/newreading" element={<NewReading />} />
 					<Route path="/community" element={<Community />} />
 					<Route path="/user/:idUser" element={<OthersUsers />} /> 
+					<Route path="*" element={<Navigate to="/" />} />
 				</Routes>
 			</UserContext.Provider>
 		</BrowserRouter>
