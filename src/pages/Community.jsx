@@ -54,7 +54,7 @@ export default function Community(){
 			<CommunityBody>
 				<h2> Conheça novos amigos e compartilhem experiências literárias</h2>
 			</CommunityBody>
-			{usersInfos.map((user) => <ListUser navigate={navigate} key={user.id} image={user.image} name={user.name} genres={user.genres} favoriteBook={user.favoriteBook} favoriteAuthor={user.favoriteAuthor}  />)}
+			{usersInfos.map((user) => <ListUser navigate={navigate} key={user.id} id={user.id} image={user.image} name={user.name} genres={user.genres} favoriteBook={user.favoriteBook} favoriteAuthor={user.favoriteAuthor}  />)}
     
 		</>
 	);

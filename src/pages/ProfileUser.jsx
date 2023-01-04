@@ -89,7 +89,7 @@ export default function ProfileUser(){
 					{(myReviews.length !== 0) && (
 						<Content>
 							<h3> Suas resenhas:</h3>
-							{myReviews.map((data) => <ListReviews navigate={navigate} image={data.image} key={data.id} title={data.title} genre={data.genre} author={data.author} />)}
+							{myReviews.map((data) => <ListReviews navigate={navigate} image={data.image} key={data.id} id={data.id} title={data.title} genre={data.genre} author={data.author} />)}
 
 						</Content>
 					)}
