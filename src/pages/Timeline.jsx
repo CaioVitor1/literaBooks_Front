@@ -5,7 +5,8 @@ import {TimelineBody, RecomendationsGenre,Recomendations,GenreName} from '../com
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 function RenderRecomendations({id, title, genre, image, genreId, navigate}){
-	const bookId = id;
+	const bookId = (id);
+	console.log(id);
 	if(genreId === 1){genre = 'Biografia';}
 	if(genreId === 2){genre = 'Infantil';}
 	if(genreId === 3){genre = 'Romances';}
@@ -55,6 +56,7 @@ export default function Timeline(){
 				console.log(res.data);
 			}); 
 	}
+	console.log(first);
 	return(
 		<>
 			<Title />
@@ -62,9 +64,9 @@ export default function Timeline(){
 				<LeftBar />
 				<Recomendations>
 					<h2> Leituras recomendadas para você! </h2>
-					{first.map((option) => <RenderRecomendations navigate={navigate} key={option.id} genreId={option.genreId} title={option.title} genre={option.genre} image={option.image}  />)}
-					{second.map((option) => <RenderRecomendations navigate={navigate} key={option.id} genreId={option.genreId} title={option.title} genre={option.genre} image={option.image}  />)}
-					{thirt.map((option) => <RenderRecomendations navigate={navigate} key={option.id} genreId={option.genreId} title={option.title} genre={option.genre} image={option.image}  />)}       
+					{first.map((option) => <RenderRecomendations navigate={navigate} key={option.id} id={option.id}  genreId={option.genreId} title={option.title} genre={option.genre} image={option.image}  />)}
+					{second.map((option) => <RenderRecomendations navigate={navigate} key={option.id} id={option.id}  genreId={option.genreId} title={option.title} genre={option.genre} image={option.image}  />)}
+					{thirt.map((option) => <RenderRecomendations navigate={navigate} key={option.id} id={option.id}  genreId={option.genreId} title={option.title} genre={option.genre} image={option.image}  />)}       
 				</Recomendations>          
 			</TimelineBody>
 		</>
